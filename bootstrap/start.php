@@ -24,11 +24,14 @@ $app = new Illuminate\Foundation\Application;
 |
 */
 
-$env = $app->detectEnvironment(array(
-
-	'local' => array('your-machine-name'),
-
-));
+$env = $app->detectEnvironment(function() {
+	if($_SERVER["HTTP_HOST"] == "localhost") {
+		return "local";
+	}else {
+		return "production";
+	};
+	
+});
 
 /*
 |--------------------------------------------------------------------------
