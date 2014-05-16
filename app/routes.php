@@ -13,5 +13,15 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('registration');
 });
+
+Route::get('/mail', function()
+{	
+	$data = ["mail" => "Markiyan"];
+	Mail::send('emails.register.register', $data, function($message)
+	{
+    	$message->to('riesssen@hotmail.com', 'John Smith')->subject('Welcome!');
+	});
+});
+

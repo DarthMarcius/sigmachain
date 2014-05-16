@@ -25,6 +25,9 @@ $app = new Illuminate\Foundation\Application;
 */
 
 $env = $app->detectEnvironment(function() {
+	/*if($_SERVER["HTTP_HOST"] == "server") {
+		return "local";
+	}*/
 	if($_SERVER["HTTP_HOST"] == "localhost") {
 		return "local";
 	}else {
