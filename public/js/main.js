@@ -25,7 +25,15 @@ window[nameSpaceName] = {
 	},
 
 	CompanyNameIsCorrect: function($input) {
-		if($input.val().length > 0) {
+		if($input.val().length > 0 && $input.val().length <= 50) {
+			return true;
+		}else {
+			return false;
+		}
+	},
+
+	CompanyDescriptionIsCorrect: function($input) {
+		if(!($input.val().length > 300)) {
 			return true;
 		}else {
 			return false;
@@ -56,7 +64,7 @@ Sigma.prototype = {
 				if(!sigma.CompanyNameIsCorrect($(ev.target))) {
 					$(ev.target).tooltip({
 						'trigger':'manual',
-						"title" : "Company name need to have at least one letter."
+						"title" : "Company name need to have at least one letter, but no more than 50."
 					});
 					$(ev.target).tooltip("show");
 				}
@@ -231,6 +239,28 @@ Sigma.prototype = {
 			}
 		});
 
+		//////////
+		$("#company-description").blur(function(ev) {
+			if(!sigma.CompanyDescriptionIsCorrect($(ev.target))) {
+				$(ev.target).closest(".form-group").addClass("has-error");
+			}
+		});
+
+		$("#company-description").focus(function(ev) {
+			$("#main-registration-form *").tooltip("destroy");
+			if($(ev.target).closest(".form-group").hasClass("has-error")) {
+				$(ev.target).closest(".form-group").removeClass("has-error");
+				if(!sigma.CompanyDescriptionIsCorrect($(ev.target))) {
+					$(ev.target).tooltip({
+						'trigger':'manual',
+						"title" : "Company description needs to be less than 300 characters."
+					});
+					$(ev.target).tooltip("show");
+				}
+			}
+			
+		});
+
 		$("#main-registration-form").submit(function() {
 			var companyNameIsCorrect = sigma.CompanyNameIsCorrect($("#company-name-input")),
 				emailsMatch = sigma.inputValuesMatch($("#company-email"), $("#company-email-confirm")),
@@ -241,7 +271,7 @@ Sigma.prototype = {
 				passwordsMatch = sigma.inputValuesMatch($("#password"), $("#password-confirm"));
 
 			if(!companyNameIsCorrect || !emailsMatch || !validEmail || !validEmailConfirm || !validPassword || !validPasswordConfirm || !passwordsMatch) {
-				$("#company-name-input").focus();
+				$($("div.has-error input")[0]).focus();
 				return false;
 			}
 		});
