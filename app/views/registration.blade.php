@@ -1,34 +1,7 @@
 @extends('layouts.master')
 @section('content')
 <body>
-	<nav class="navbar navbar-default" role="navigation">
-		<div class="container-fluid">
-			<div class="navbar-header">
-			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar-collapse">
-				    <span class="sr-only">Toggle navigation</span>
-				    <span class="icon-bar"></span>
-				    <span class="icon-bar"></span>
-				    <span class="icon-bar"></span>
-			    </button>
-			    <a class="navbar-brand" href="#"><img src="../img/sigma_chain_new.png" class="img-responsive" alt="Responsive image"></a>
-		    </div>
-
-		    <div class="collapse navbar-collapse" id="main-navbar-collapse">
-		    	<ul class="nav navbar-nav">
-			        <li class="active"><a href="#">Home</a></li>
-			        {{---<li class="info"><a href="#">Advanced search</a></li>---}}
-		      	</ul>
-				<form id="nav-search-form" class="navbar-form navbar-right visible-md visible-lg" role="search">
-				  <div class="form-group">
-				    <input id = "navbar-search" type="text" class="form-control" placeholder="Company name">
-				    <button type="submit" id="nav-search-submit" class="btn btn-primary">Search</button>
-				  </div>
-				  
-				</form>
-		    </div><!-- /.navbar-collapse -->
-
-		</div>
-	</nav><!-- navbar end -->
+	@include('headers.home')
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-6">
@@ -44,26 +17,26 @@
 			<div class="col-md-5">
 
 				<h3 class="text-center text-info">Company Registration</h3>
-				<form action="" class="form-horizontal" role="form" id="main-registration-form">
+				<form action="/register" method="POST" class="form-horizontal" role="form" id="main-registration-form">
 					<hr>
 					<div class="form-group">
 						<label for="company-name-input" class="col-sm-4 control-label">
 							Company Name
 						</label>
 						<div class="col-sm-8">
-							<input id ="company-name-input" type="text" placeholder="Company Name" class="form-control">
+							<input name="name" id ="company-name-input" type="text" placeholder="Company Name" class="form-control">
 						</div>
 					</div>	
 					<div class="form-group">
 						<label for="company-email" class="col-sm-4 control-label">Company Email</label>
 						<div class="col-sm-8">
-							<input type="email" id="company-email" class="form-control" placeholder="Email" data-toggle="tooltip">
+							<input name = "email" type="email" id="company-email" class="form-control" placeholder="Email" data-toggle="tooltip">
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="company-email-confirm" class="col-sm-4 control-label">Confirm Email</label>
 						<div class="col-sm-8">
-							<input type="email" id="company-email-confirm" class="form-control" placeholder="Confirm Email" data-toggle="tooltip">
+							<input name="email-confirm" type="email" id="company-email-confirm" class="form-control" placeholder="Confirm Email" data-toggle="tooltip">
 						</div>
 					</div>
 					<div class="form-group">
@@ -327,19 +300,19 @@
 					<div class="form-group">
 						<label for="password" class="col-sm-4 control-label">Password</label>
 						<div class="col-sm-8">
-							<input type="password" id="password" class="form-control" placeholder="Password">
+							<input name = "password" type="password" id="password" class="form-control" placeholder="Password">
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="password-confirm" class="col-sm-4 control-label">Confirm Password</label>
 						<div class="col-sm-8">
-							<input type="password" id="password-confirm" class="form-control" placeholder="Confirm Password">
+							<input name = "password-confirm" type="password" id="password-confirm" class="form-control" placeholder="Confirm Password">
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="company-description" class="col-sm-4 control-label">Company Description</label>
 						<div class="col-sm-8">
-							<textarea class="form-control" name="description" id="company-description" rows="3"></textarea>
+							<textarea name = "about" class="form-control" name="description" id="company-description" rows="3"></textarea>
 						</div>
 					</div>
 					<div class="form-group">

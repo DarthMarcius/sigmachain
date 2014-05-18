@@ -231,8 +231,23 @@ Sigma.prototype = {
 			}
 		});
 
+		$("#main-registration-form").submit(function() {
+			var companyNameIsCorrect = sigma.CompanyNameIsCorrect($("#company-name-input")),
+				emailsMatch = sigma.inputValuesMatch($("#company-email"), $("#company-email-confirm")),
+				validEmail = sigma.checkValidEmail($("#company-email")),
+				validEmailConfirm = sigma.checkValidEmail($("#company-email-confirm")),
+				validPassword = sigma.checkValidPassword($("#password")),
+				validPasswordConfirm = sigma.checkValidPassword($("#password-confirm")),
+				passwordsMatch = sigma.inputValuesMatch($("#password"), $("#password-confirm"));
+
+			if(!companyNameIsCorrect || !emailsMatch || !validEmail || !validEmailConfirm || !validPassword || !validPasswordConfirm || !passwordsMatch) {
+				$("#company-name-input").focus();
+				return false;
+			}
+		});
 		/*$("input").focus(function(ev) {
 			$(ev.target).closest(".form-group").removeClass("has-error");
 		});*/
+		
 	}
 }

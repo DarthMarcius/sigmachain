@@ -13,15 +13,29 @@
 
 Route::get('/', function()
 {
+	//echo(App::environment());
 	return View::make('registration');
 });
+//registration route
+Route::post('/register', 'RegistrationController@preRegisterAndSentEmail');
+Route::get('/register', 'RegistrationController@confirmRegistration');
+/*Route::post('/register', function()
+{
 
+	return View::make('pages.registration_confirm');
+});*/
+
+/*Route::get('/register', function()
+{
+	return View::make('pages.registration_confirm');
+});*/
+///
 Route::get('/mail', function()
 {	
 	$data = ["mail" => "Markiyan"];
 	Mail::send('emails.register.register', $data, function($message)
 	{
-    	$message->to('riesssen@hotmail.com', 'John Smith')->subject('Welcome!');
+    	$message->to('asmodianis@gmail.com', 'John Smith')->subject('Welcome!');
 	});
 });
 

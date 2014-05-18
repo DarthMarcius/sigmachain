@@ -25,16 +25,16 @@ $app = new Illuminate\Foundation\Application;
 */
 
 $env = $app->detectEnvironment(function() {
-	/*if($_SERVER["HTTP_HOST"] == "server") {
-		return "local";
-	}*/
-	if($_SERVER["HTTP_HOST"] == "localhost") {
+	$hostName = gethostname();
+	$possibleMyPCName = substr_replace($hostName, "", strlen($hostName)-3, 3);
+	if($possibleMyPCName == "MarciusNote") {
 		return "local";
 	}else {
-		return "production";
-	};
+		return "server";
+	}
 	
 });
+
 
 /*
 |--------------------------------------------------------------------------
