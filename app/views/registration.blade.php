@@ -325,17 +325,39 @@
 									<input type="submit" class="btn btn-block btn-primary" value="Register">
 								</div>
 								<div class="col-sm-6">
-									<input type="button" class="btn btn-block btn-default" value="Login">
+									<input type="button" id="login-button" class="btn btn-block btn-default" value="Login">
 								</div>
 							</div>
-							
-							
-							
 						</div>
 					
 					</div>
 					
 				</form>
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">{{-- modal --}}
+				  <div class="modal-dialog modal-sm">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				        <h3 class="modal-title text-center text-info" id="myModalLabel">Login</h3>
+				      </div>
+				      <div class="modal-body">
+				        <form action="" role="form">
+				        	<div class="form-group">
+							    <label for="login-email">Email address</label>
+							    <input type="email" name="login-email" class="form-control" id="login-email" placeholder="Enter email">
+							</div>
+							<div class="form-group">
+							    <label for="login-password">Password</label>
+							    <input type="password" name="login-password" class="form-control" id="login-password" placeholder="Password">
+							</div>
+							<div class="form-group">
+							   <input type="submit" class="btn btn-block btn-primary" value="Login">
+							</div>
+				        </form>
+				      </div>
+				    </div>
+				  </div>
+				</div>{{-- modal end--}}
 			</div>
 			<div class="col-md-1">
 		</div>

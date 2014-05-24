@@ -4,6 +4,66 @@
 		"selected_items":
 		[
 			[
+				"slide",
+				"slidesData"
+			],
+			[
+				"fi",
+				"first-Slide"
+			],
+			[
+				"cl",
+				"click"
+			],
+			[
+				"off",
+				"offsetTop"
+			],
+			[
+				"mou",
+				"mouseup"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"ba",
+				"background"
+			],
+			[
+				"wi",
+				"window"
+			],
+			[
+				"text",
+				"textarea"
+			],
+			[
+				"data",
+				"data-val"
+			],
+			[
+				"ctrl",
+				"ctrlPressed"
+			],
+			[
+				"registration",
+				"registration_status"
+			],
+			[
+				"registrati",
+				"registration_confirm"
+			],
+			[
+				"cou",
+				"country"
+			],
+			[
+				"compa",
+				"companies"
+			],
+			[
 				"ex",
 				"excel-cell"
 			],
@@ -144,10 +204,6 @@
 				"click"
 			],
 			[
-				"wi",
-				"width"
-			],
-			[
 				"offset",
 				"offsetLeft"
 			],
@@ -162,10 +218,6 @@
 			[
 				"stop",
 				"stopPropagation"
-			],
-			[
-				"cl",
-				"click"
 			],
 			[
 				"pa",
@@ -186,10 +238,6 @@
 			[
 				"o",
 				"overflow"
-			],
-			[
-				"ba",
-				"background-color"
 			],
 			[
 				"hi",
@@ -340,16 +388,8 @@
 				"hideDocumentPopup"
 			],
 			[
-				"mou",
-				"mousedown"
-			],
-			[
 				"drop",
 				"dropdown"
-			],
-			[
-				"di",
-				"display"
 			],
 			[
 				"va",
@@ -432,10 +472,6 @@
 				"defaultDocumentSettings"
 			],
 			[
-				"off",
-				"off"
-			],
-			[
 				"sh",
 				"showPopup"
 			],
@@ -478,53 +514,73 @@
 			[
 				"formu",
 				"formulaBoxFocused"
-			],
-			[
-				"cells",
-				"cells"
-			],
-			[
-				"ke",
-				"keydown"
-			],
-			[
-				"ky",
-				"keydown"
-			],
-			[
-				"ie8",
-				"isIE8OrLess"
-			],
-			[
-				"show",
-				"showPopup"
-			],
-			[
-				"el",
-				"else"
-			],
-			[
-				"P",
-				"preventDefault"
-			],
-			[
-				"fro",
-				"from-line"
-			],
-			[
-				"caret",
-				"caretTo"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "app/lang/en/pagination.php",
+			"file": "/C/Users/Marcius/Dropbox/MyProjects/eskill/new/powerpoint/styles/ribbon.css",
 			"settings":
 			{
-				"buffer_size": 508,
-				"line_ending": "Unix"
+				"buffer_size": 38365,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Marcius/Dropbox/MyProjects/eskill/new/powerpoint/body.html",
+			"settings":
+			{
+				"buffer_size": 21331,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Marcius/Dropbox/MyProjects/eskill/new/powerpoint/scripts/main.js",
+			"settings":
+			{
+				"buffer_size": 28651,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Marcius/Dropbox/MyProjects/eskill/new/powerpoint/scripts/main.min.js",
+			"settings":
+			{
+				"buffer_size": 11992,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Marcius/Dropbox/MyProjects/eskill/new/powerpoint/questions/question1/scripts/question1.js",
+			"settings":
+			{
+				"buffer_size": 1635,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Marcius/Dropbox/MyProjects/eskill/new/powerpoint/questions/question1/scripts/question1.min.js",
+			"settings":
+			{
+				"buffer_size": 958,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Marcius/Desktop/test1/index.html",
+			"settings":
+			{
+				"buffer_size": 509,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Marcius/Desktop/test1/main.js",
+			"settings":
+			{
+				"buffer_size": 215,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -592,7 +648,80 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Marcius/Desktop/test1/script.js",
+		"/C/Users/Marcius/Desktop/test1/main.js",
+		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/powerpoint/styles/document.css",
+		"/C/Users/Marcius/Desktop/test1/handlebars.js",
+		"/C/Users/Marcius/Desktop/test1/handlebars.min.js",
+		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/powerpoint/internal_testing/head_dev.html",
+		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/powerpoint/internal_testing/head.html",
+		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/powerpoint/scripts/main.js",
+		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/powerpoint/body.html",
+		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/powerpoint/styles/ribbon.css",
+		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/outlook/scripts/main.js",
+		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/outlook/body.html",
+		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/simulators/powerpoint/questions/question1/scripts/question1.js",
+		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/simulators/framework/scripts/external_libs/helper_functions.js",
+		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/powerpoint/scripts/main.min.js",
+		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/simulators/outlook/styles/simulator.css",
+		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/simulators/framework/scripts/main.js",
+		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/simulators/framework/scripts/main.min.js",
+		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/simulators/outlook/scripts/main.js",
+		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/simulators/powerpoint/scripts/main.js",
+		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/simulators/framework/SpriteMachine.jsx",
+		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/simulators/powerpoint/body.html",
+		"/D/Photoshop.CS6.13.0/Photoshop.CS6.13.0/App/PhotoshopCS6/Presets/Scripts/SpriteMachine.jsx",
+		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/outlook/internal_testing/simulator-init.php",
+		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/outlook/questions/question21/scripts/question21.js",
+		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/outlook/scripts/main.min.js",
+		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/powerpoint/styles/simulator.css",
+		"/C/Users/Marcius/Desktop/test/script.js",
+		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/simulators/powerpoint/scripts/main.min.js",
+		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/excel/internal_testing/simulator-init.php",
+		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/excel/questions/question16/scripts/question16.js",
+		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/excel/questions/question41/scripts/question41.js",
+		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/simulators/powerpoint/internal_testing/simulator-init.php",
+		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/excel/questions/question13/scripts/question13.js",
+		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/simulators/powerpoint/internal_testing/index.php",
+		"/C/wamp/www/sigmachain_repo/app/views/emails/register/register.blade.php",
+		"/C/wamp/www/sigmachain_repo/app/helpers/Helpers.php",
+		"/C/wamp/www/sigmachain_repo/.env.local.php",
+		"/C/wamp/www/sigmachain_repo/public/js/main.js",
+		"/C/wamp/www/sigmachain_repo/app/controllers/RegistrationController.php",
 		"/C/wamp/www/sigmachain_repo/bootstrap/start.php",
+		"/C/wamp/www/sigmachain_repo/.env.server.php",
+		"/C/wamp/www/sigmachain_repo/app/config/server/mail.php",
+		"/C/wamp/www/sigmachain_repo/app/config/local/mail.php",
+		"/C/wamp/www/sigmachain_repo/app/config/server/database.php",
+		"/C/wamp/www/sigmachain_repo/app/config/local/database.php",
+		"/C/wamp/www/sigmachain_repo/app/config/server/app.php",
+		"/C/wamp/www/sigmachain_repo/.gitignore",
+		"/C/wamp/www/sigmachain_repo/app/models/Company.php",
+		"/C/wamp/www/sigmachain_repo/app/config/local/app.php",
+		"/C/wamp/www/sigmachain_repo/app/views/pages/registration_confirm.blade.php",
+		"/C/wamp/www/sigmachain_repo/app/views/registration.blade.php",
+		"/C/wamp/www/sigmachain_repo/app/routes.php",
+		"/C/wamp/www/sigmachain_repo/app/database/migrations/2014_05_18_100942_add_confirm_key_for_companies.php",
+		"/C/wamp/www/sigmachain_repo/app/database/migrations/2014_05_18_101736_drop_companies_registration_status.php",
+		"/C/wamp/www/sigmachain_repo/app/database/migrations/2014_05_18_101937_add_bool_registration_status.php",
+		"/C/wamp/www/sigmachain_repo/public/js/registration.js",
+		"/C/wamp/www/sigmachain_repo/app/views/headers/home.blade.php",
+		"/C/wamp/www/sigmachain_repo/app/lang/en/pagination.php",
+		"/C/wamp/www/old/clinics_social_network/controllers/front_controller.php",
+		"/C/wamp/www/sigmachain_repo/app/start/global.php",
+		"/C/wamp/www/sigmachain_repo/app/views/footers/home.blade.php",
+		"/C/wamp/www/sigmachain_repo/app/views/layouts/master.blade.php",
+		"/C/wamp/www/sigmachain_repo/app/models/User.php",
+		"/C/wamp/www/sigmachain_repo/app/database/migrations/2014_05_17_090217_create_companies_table.php",
+		"/C/wamp/www/sigmachain_repo/app/config/database.php",
+		"/C/wamp/www/sigmachain_repo/app/controllers/HomeController.php",
+		"/C/wamp/www/sigmachain_repo/app/controllers/BaseController.php",
+		"/C/wamp/www/sigmachain_repo/app/views/emails/register/register.php",
+		"/C/wamp/www/sigmachain_repo/app/views/js_footers/registration.blade.php",
+		"/C/wamp/www/sigmachain_repo/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/HasMany.php",
+		"/C/wamp/www/sigmachain_repo/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/HasOneOrMany.php",
+		"/C/wamp/www/sigmachain_repo/app/views/registration.blade..php",
+		"/C/wamp/www/sigmachain_repo/app/views/emails/auth/reminder.blade.php",
 		"/C/wamp/www/sigmachain_repo/public/index.php",
 		"/H/MyProjects/eskill/app_resources_svn/scripts/main.min.js",
 		"/H/MyProjects/eskill/app_resources_svn/questions/question41/scripts/question41.js",
@@ -608,7 +737,6 @@
 		"/H/MyProjects/eskill/word_project/internal_testing/questions_jsons/1/Question1.json",
 		"/H/MyProjects/eskill/word_project/internal_testing/questions_jsons/1/json.txt",
 		"/H/MyProjects/eskill/word_project/scripts/external_libs/helper_functions.js",
-		"/C/Users/Marcius/Desktop/test/script.js",
 		"/H/MyProjects/eskill/word_project/questions/question1/scripts/question1.js",
 		"/C/Users/Marcius/Desktop/test/index.html",
 		"/H/MyProjects/eskill/word_project/body.html",
@@ -629,7 +757,6 @@
 		"/H/MyProjects/eskill/word_project/questions/question27/scripts/question27.min.js",
 		"/H/MyProjects/eskill/word_project/questions/question27/scripts/question27.js",
 		"/C/Users/Marcius/Dropbox/MyProjects/side_projects/laravel_demo/laravel/app/config/database.php",
-		"/C/wamp/www/sigmachain_repo/.gitignore",
 		"/H/MyProjects/side_projects/laravel_demo/laravel/bootstrap/start.php",
 		"/C/wamp/www/laraveltest/bootstrap/start.php",
 		"/H/MyProjects/eskill/app_resources_svn/scripts/external_libs/helper_functions.js",
@@ -648,78 +775,7 @@
 		"/C/Users/Marcius/Dropbox/MyProjects/side_projects/laravel_demo/laravel/bootstrap/start.php",
 		"/C/Users/Marcius/Dropbox/MyProjects/eskill/app_resources_svn/scripts/main.min.js",
 		"/C/Users/Marcius/Dropbox/MyProjects/side_projects/laravel_demo/laravel/bootstrap/paths.php",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/app_resources_svn/styles/cells.css",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/app_resources_svn/styles/cells.min.css",
-		"/C/Users/Marcius/Desktop/SpriteMachine.jsx",
-		"/D/Photoshop.CS6.13.0/Photoshop.CS6.13.0/App/PhotoshopCS6/Presets/Scripts/[IG] Anounce Position and Size.jsx",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/word_project/scripts/main.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/outlook_project/internal_testing/simulator-init.php",
-		"/C/Users/Marcius/Dropbox/MyProjects/side_projects/laravel_demo/laravel/app/routes.php",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/app_resources_svn/questions/question24/scripts/question24.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/side_projects/laravel_demo/laravel/app/views/hello.php",
-		"/C/Users/Marcius/Dropbox/MyProjects/side_projects/laravel_demo/laravel/app/filters.php",
-		"/C/Users/Marcius/Dropbox/MyProjects/side_projects/laravel_demo/laravel/app/config/local/app.php",
-		"/C/Users/Marcius/Dropbox/MyProjects/side_projects/laravel_demo/laravel/app/start/global.php",
-		"/C/wamp/www/laraveltest/app/config/app.php",
-		"/C/Users/Marcius/Dropbox/MyProjects/side_projects/laravel_demo/laravel/.env.php",
-		"/C/Users/Marcius/Dropbox/MyProjects/side_projects/laravel_demo/laravel/.env.local.php",
-		"/C/Users/Marcius/Dropbox/MyProjects/side_projects/laravel_demo/laravel/.gitignore",
-		"/C/Users/Marcius/Dropbox/MyProjects/side_projects/laravel_demo/laravel/app/config/app.php",
-		"/C/Users/Marcius/Dropbox/MyProjects/side_projects/laravel_demo/laravel/public/.htaccess",
-		"/C/wamp/www/laraveltest/app/config/local/app.php",
-		"/C/wamp/www/info1.php",
-		"/C/wamp/www/info.php",
-		"/C/Users/Marcius/Dropbox/PROJECT_Eskill/Eskill-App/NEW - simulators/docs/HTML-docs/views/word.html",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/app_resources_svn/scripts/external_libs/helper_functions.js",
-		"/C/Users/Marcius/Dropbox/PROJECT_Eskill/Eskill-App/NEW - simulators/docs/HTML-docs/views/helpers_framework.html",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/word_project/styles/main.css",
-		"/C/Users/Marcius/Dropbox/PROJECT_Eskill/Eskill-App/NEW - simulators/docs/HTML-docs/scripts/main.js",
-		"/C/Users/Marcius/Dropbox/PROJECT_Eskill/Eskill-App/NEW - simulators/docs/HTML-docs/styles/custom.css",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/app_resources_svn/questions/question6/scripts/question6.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/app_resources_svn/internal_testing/simulator-init.php",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/app_resources_svn/questions/question2/scripts/question2.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/app_resources_svn/questions/question3/scripts/question3.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/outlook_project/questions/question34/scripts/question34.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/side_projects/sigmachain/index.php",
-		"/C/Users/Marcius/Dropbox/MyProjects/side_projects/sigmachain/controllers/login_controller.php",
-		"/D/lessons/Twitter Bootstrap/Source/Source Files/Lessons/lesson20AccordionCarousel.html",
-		"/C/Users/Marcius/Dropbox/MyProjects/side_projects/sigmachain/styles/custom.scss",
-		"/C/Users/Marcius/Dropbox/MyProjects/side_projects/sigmachain/scripts/registration.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/side_projects/sigmachain/controllers/registration_controller.php",
-		"/C/Users/Marcius/Dropbox/MyProjects/side_projects/sigmachain/views/registration_view.php",
-		"/C/Users/Marcius/Dropbox/MyProjects/side_projects/sigmachain/scripts/main.js",
-		"/C/Users/Marcius/AppData/Local/Temp/fz3temp-1/login_view.php",
-		"/C/Users/Marcius/Dropbox/MyProjects/side_projects/sigmachain/views/login_content.php",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/outlook_project/internal_testing/index.php",
-		"/C/Users/Marcius/Dropbox/PROJECT_Eskill/Eskill-App/NEW - simulators/docs/HTML-docs/index.html",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/word_project/internal_testing/index.php",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/word_project/internal_testing/head_dev.html",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/word_project/internal_testing/head.html",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/word_project/internal_testing/simulator-init.php",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/outlook_project/questions/question34/scripts/question34.min.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/word_project/internal_testing/simulator-init.html",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/outlook_project/questions/question16/scripts/question16.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/outlook_project/questions/question6/scripts/question6.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/outlook_project/questions/question6/scripts/question6.min.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/outlook_project/questions/question4/scripts/question4.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/outlook_project/questions/question16/scripts/question16.min.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/outlook_project/questions/question4/scripts/question4.min.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/outlook_project/questions/question3/scripts/question3.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/outlook_project/questions/question38/scripts/question38.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/outlook_project/questions/question2/scripts/question2.min.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/outlook_project/questions/question2/scripts/question2.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/outlook_project/questions/question13/scripts/question13.min.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/outlook_project/questions/question13/scripts/question13.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/outlook_project/questions/question38/scripts/question38.min.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/outlook_project/questions/question3/scripts/question3.min.js",
-		"/D/lessons/Twitter Bootstrap/Source/Source Files/Exercise/css/custom.css",
-		"/C/Users/Marcius/Dropbox/MyProjects/side_projects/sigmachain/views/login_view.php",
-		"/C/Users/Marcius/Dropbox/MyProjects/side_projects/sigmachain/bootstrap/space-lab/bootstrap.min.css",
-		"/C/Users/Marcius/Dropbox/MyProjects/side_projects/sigmachain/bootstrap/css/bootstrap.css",
-		"/C/Users/Marcius/Dropbox/MyProjects/side_projects/sigmachain/bootstrap/space-lab/bootstrap.css",
-		"/C/Users/Marcius/Dropbox/MyProjects/side_projects/sigmachain/bootstrap/config.json",
-		"/C/Users/Marcius/Dropbox/MyProjects/side_projects/sigmachain/bootstrap/js/bootstrap.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/side_projects/sigmachain/bootstrap/css/bootstrap.css.map"
+		"/C/Users/Marcius/Dropbox/MyProjects/eskill/app_resources_svn/styles/cells.css"
 	],
 	"find":
 	{
@@ -738,6 +794,71 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"createContentArea",
+			"setListeners",
+			"tab-slides",
+			"slide",
+			"powerpoint-slide-0",
+			"cloningListeners",
+			"createContentArea",
+			"content-left",
+			"createContentArea",
+			"this.implementedCallbacks",
+			"createContentArea",
+			"rightClickDropdownsListeners",
+			"bodylisteners",
+			"notes-v",
+			"normal-view",
+			".normal-view",
+			"pp-normal-view",
+			"pp-home-slides-item1",
+			"ribbonStructureListeners",
+			"tabNavigationListeners",
+			"set",
+			"group",
+			"positionPopupToCoordinates",
+			"rightClickDropdownsListeners",
+			"dropdownsListeners",
+			".dropdown",
+			"dropdownsListeners",
+			"drop",
+			"left:0;",
+			"-1px",
+			"-1",
+			"setlisteners",
+			"listeners",
+			"recurrence-popup",
+			"data",
+			"this",
+			"-clone",
+			"createContentArea",
+			"contentLeftListeners",
+			"ontentLeftListeners",
+			"buttons-wrapper",
+			"createContentArea",
+			"cloningListeners",
+			"createContentArea",
+			"this.idArray",
+			"CompanyNameIsCorrect",
+			"company-name-input",
+			"name",
+			"$company",
+			"$companyModel",
+			"$company",
+			"$result",
+			"registration_status",
+			"echo",
+			"name",
+			"$company_name",
+			"$password",
+			"\"",
+			"post",
+			"get",
+			"email",
+			"user",
+			"h4",
+			"sigma",
+			"2",
 			"finala",
 			"SLN",
 			"replace",
@@ -800,72 +921,7 @@
 			"console",
 			"13",
 			"#enter",
-			"console.log",
-			"sync",
-			"lastclicke",
-			"pressEnter",
-			"enter",
-			"backspace",
-			"ue8",
-			"ieout",
-			"(ev.target)",
-			"clone",
-			"blur",
-			"lastc",
-			"blur",
-			"con",
-			"document",
-			"riginal_id",
-			"getcaretposition",
-			"ctrl+shift+=",
-			"alert",
-			"ctrl+shift+",
-			"ctrl+shift+=",
-			"alert",
-			"originalToCloneSync",
-			"mousedo",
-			"console",
-			"that.mouseDownDuringSellSelectNumber",
-			"mousedown",
-			"make",
-			"ev.preventDefault",
-			"in1",
-			"getcaretposition",
-			"makeAllCellsUnselectable",
-			"hidden-clone",
-			"console.log",
-			"console",
-			"target.id.substr(0, 2)",
-			"ev.target.id.substr(0, 2)",
-			"mousemove",
-			"console",
-			"mousemove",
-			"cellSelect:",
-			"cellselect",
-			"isExcelFunction",
-			"SUM",
-			"caretTo",
-			"helpers.ue8Oout(",
-			"mousedown",
-			"caretTo",
-			"CaretPosition",
-			"ribonStructureListeners",
-			"conso",
-			"in fo",
-			"preventdef",
-			"focus",
-			"mousedown",
-			"mousemove",
-			"mousedown",
-			"layer",
-			"backspace",
-			"console",
-			"X",
-			"mousemove",
-			"eup",
-			"mousedown",
-			"$activeCell",
-			"readonly"
+			"console.log"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -883,29 +939,217 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/lang/en/pagination.php",
+					"file": "/C/Users/Marcius/Dropbox/MyProjects/eskill/new/powerpoint/styles/ribbon.css",
 					"settings":
 					{
-						"buffer_size": 508,
+						"buffer_size": 38365,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								131,
-								131
+								4949,
+								4949
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3672.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/Marcius/Dropbox/MyProjects/eskill/new/powerpoint/body.html",
+					"settings":
+					{
+						"buffer_size": 21331,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								19407,
+								19407
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6923.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/Marcius/Dropbox/MyProjects/eskill/new/powerpoint/scripts/main.js",
+					"settings":
+					{
+						"buffer_size": 28651,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6244,
+								6244
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3079.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/Users/Marcius/Dropbox/MyProjects/eskill/new/powerpoint/scripts/main.min.js",
+					"settings":
+					{
+						"buffer_size": 11992,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/Users/Marcius/Dropbox/MyProjects/eskill/new/powerpoint/questions/question1/scripts/question1.js",
+					"settings":
+					{
+						"buffer_size": 1635,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1374,
+								1386
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 432.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/C/Users/Marcius/Dropbox/MyProjects/eskill/new/powerpoint/questions/question1/scripts/question1.min.js",
+					"settings":
+					{
+						"buffer_size": 958,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/C/Users/Marcius/Desktop/test1/index.html",
+					"settings":
+					{
+						"buffer_size": 509,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								341,
+								341
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/C/Users/Marcius/Desktop/test1/main.js",
+					"settings":
+					{
+						"buffer_size": 215,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								191
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -922,7 +1166,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 34.0
 	},
 	"layout":
 	{
@@ -979,7 +1223,7 @@
 	"show_minimap": true,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 233.0,
 	"status_bar_visible": true
 }

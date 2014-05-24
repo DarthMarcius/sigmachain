@@ -278,6 +278,12 @@ Sigma.prototype = {
 		/*$("input").focus(function(ev) {
 			$(ev.target).closest(".form-group").removeClass("has-error");
 		});*/
-		
+		/////login Modal Listeners
+		$("#login-button").click(function() {
+			$('#myModal').modal({
+				keyboard: true
+			});
+		});
+
 	}
 }
