@@ -30,12 +30,17 @@ Route::get('/register', 'RegistrationController@confirmRegistration');
 	return View::make('pages.registration_confirm');
 });*/
 ///
-Route::get('/mail', function()
-{	
-	$data = ["mail" => "Markiyan"];
-	Mail::send('emails.register.register', $data, function($message)
-	{
-    	$message->to('asmodianis@gmail.com', 'John Smith')->subject('Welcome!');
-	});
-});
+Route::post("/login", "LoginController@login");
 
+Route::get("/company/{id}", array('before' => 'auth', function()
+{
+	echo "Dashboard";
+    // Only authenticated users may enter...
+}));
+/*Route::post('/login', function()
+{
+	if(Request::ajax()) {
+		return "hello";
+	}
+
+});*/

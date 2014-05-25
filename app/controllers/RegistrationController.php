@@ -61,7 +61,7 @@ class RegistrationController extends BaseController {
 
 		$company->name = $name;
 		$company->email = $email;
-		$company->password = Hash::make($name);
+		$company->password = Hash::make($password);
 		$company->country = $country;
 		$company->registration_confirm_key = Hash::make($password).Hash::make($email);
 		$company->description = $description;

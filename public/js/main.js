@@ -285,5 +285,37 @@ Sigma.prototype = {
 			});
 		});
 
+		$("#login-form").submit(function(ev) {
+			ev = $.event.fix(ev);
+			ev.preventDefault();
+			var email = $("#login-email").val(),
+				password = $("#login-password").val();
+			$.ajax({
+				async: false,
+				url: "/login",
+				type : "POST",
+				data: {email: email, password: password},
+				dataType: "json",
+				success: function(data) {
+					$("#login-form *").tooltip("destroy");
+					if(data.result != true) {
+						$("#login-email").closest(".form-group").addClass("has-error");
+						$("#login-password").closest(".form-group").addClass("has-error");
+						$("#login-email").tooltip({
+							'trigger':'manual',
+							"title" : "Email and password don't match."
+						});
+						$("#login-email").tooltip("show");
+						$("#login-email").focus();
+
+					}else {
+						$("#login-email").closest(".form-group").removeClass("has-error");
+						$("#login-password").closest(".form-group").removeClass("has-error");
+						window.location.href = "/company/" + data.id;
+					}
+				}
+			});
+		});
+
 	}
 }

@@ -341,17 +341,17 @@
 				        <h3 class="modal-title text-center text-info" id="myModalLabel">Login</h3>
 				      </div>
 				      <div class="modal-body">
-				        <form action="" role="form">
+				        <form action="/login" method="POST" role="form" id="login-form">
 				        	<div class="form-group">
 							    <label for="login-email">Email address</label>
-							    <input type="email" name="login-email" class="form-control" id="login-email" placeholder="Enter email">
+							    <input type="email" name="login-email" class="form-control" id="login-email" placeholder="Enter email" value="asmodianis@gmail.com">
 							</div>
 							<div class="form-group">
 							    <label for="login-password">Password</label>
-							    <input type="password" name="login-password" class="form-control" id="login-password" placeholder="Password">
+							    <input type="password" name="login-password" class="form-control" id="login-password" placeholder="Password" value="111111">
 							</div>
 							<div class="form-group">
-							   <input type="submit" class="btn btn-block btn-primary" value="Login">
+							   <input type="submit" id="login-submit" class="btn btn-block btn-primary" value="Login">
 							</div>
 				        </form>
 				      </div>
