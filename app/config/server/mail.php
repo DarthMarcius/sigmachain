@@ -28,7 +28,7 @@ return array(
 	|
 	*/
 
-	'host' => 'smtp.gmail.com',
+	'host' => 'localhost',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'marksidius@gmail.com', 'name' => 'sigmachain'),
+	'from' => array('address' => 'support@sigmachain.com', 'name' => 'sigmachain'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return array(
 	|
 	*/
 
-	'username' => "asmodianis@gmail.com",
+	'username' => "support@sigmachain.com",
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return array(
 	|
 	*/
 
-	'password' => "DragonRebornnwa_Marcius",
+	'password' => "tifind96",
 
 	/*
 	|--------------------------------------------------------------------------

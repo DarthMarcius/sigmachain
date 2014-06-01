@@ -1,12 +1,48 @@
+$primary-color: #b19d6f;
 .navbar-brand {
 	padding: 5px;
 	width: 90px;
 }
 
-#chain-description {
+/*#chain-description {
 	color: #0e385f;
 	font-family: 'lucida grande',tahoma,verdana,arial,sans-serif
+}*/
+
+#market-wrapper {
+	header {
+		h1 {
+			color: $primary-color;
+		}
+		.mbuttons {
+			a {
+				margin-left: 2px;
+			}
+		}
+	}
 }
+
+#registration-title {
+	color: $primary-color;
+}
+#main-registration-form {
+	color: $primary-color;
+}
+
+#login-modal {
+	form {
+		color: $primary-color;
+	}
+	#myModalLabel {
+		color: $primary-color !important;
+	}
+}
+
+.main-page-text {
+	margin-left: 5px;
+	color: $primary-color;
+}
+
 /*@media only screen and (max-width: 916px) and (min-width: 768px) {
 	.collapse {
 		display: none;

@@ -59,7 +59,7 @@
 				$result = "Something is wrong with input data.";
 				break;
 				case "confirm_ok":
-				$result = "You you confirmed your registration, you will be redirected to your company dashboard now.";
+				$result = "You confirmed your registration, you will be redirected to your company dashboard now.";
 				break;
 				case "registredAllready":
 				$result = "You already confirmed your company registration.";

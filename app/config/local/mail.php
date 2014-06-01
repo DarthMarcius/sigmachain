@@ -93,7 +93,7 @@ return array(
 	|
 	*/
 
-	'password' => "DragonRebornnwa_Marcius",
+	'password' => "DragonRebornosf_Marcius",
 
 	/*
 	|--------------------------------------------------------------------------

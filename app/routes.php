@@ -14,27 +14,19 @@
 Route::get('/', function()
 {
 	//echo(App::environment());
-	return View::make('registration');
+	return View::make('home');
 });
 //registration route
 Route::post('/register', 'RegistrationController@preRegisterAndSentEmail');
 Route::get('/register', 'RegistrationController@confirmRegistration');
-/*Route::post('/register', function()
-{
 
-	return View::make('pages.registration_confirm');
-});*/
-
-/*Route::get('/register', function()
-{
-	return View::make('pages.registration_confirm');
-});*/
-///
 Route::post("/login", "LoginController@login");
 
 Route::get("/company/{id}", array('before' => 'auth', function()
 {
-	echo "Dashboard";
+	//Session::put('company_id', "5");
+	//Auth::logout();
+	var_dump(Session::get('company_id'));
     // Only authenticated users may enter...
 }));
 /*Route::post('/login', function()

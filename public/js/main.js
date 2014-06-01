@@ -317,5 +317,13 @@ Sigma.prototype = {
 			});
 		});
 
+		$("#registration-thumb").click(function() {
+			$.scrollTo('#registration-title', 400)
+		});
+
+		$("#login-thumb").click(function() {
+			$("#login-button").click();
+		});
+
 	}
 }

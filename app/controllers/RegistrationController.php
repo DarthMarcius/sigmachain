@@ -18,7 +18,7 @@ class RegistrationController extends BaseController {
 	public function preRegisterAndSentEmail() {
 		$preRegisterStatus = $this->preRegister();
 		$registration_confirm_message = array (
-			"message" => Helpers::getRegistrationMessage($preRegisterStatus),
+			"message" => Helpers::getRegistrationMessage($preRegisterStatus)
 		);
 		return View::make('pages.registration_confirm', $registration_confirm_message);
 		
@@ -133,7 +133,18 @@ class RegistrationController extends BaseController {
 		$registration_confirm_message = array (
 			"message" => Helpers::getRegistrationMessage($confirmStatus),
 		);
-		return View::make('pages.registration_confirm', $registration_confirm_message);
+		if($confirmStatus != "confirm_ok") {
+			return View::make('pages.registration_confirm', $registration_confirm_message);
+		}else {
+			$link = Input::get('link');
+			$companyModel = Company::where('registration_confirm_key', '=', $link);
+			$company = $companyModel->first();
+			$id = $company->id;
+			Auth::loginUsingId($id);
+			Session::put('company_id', $id);
+			return Redirect::to('company/'.$id);
+		}
+
 	}
 
 }

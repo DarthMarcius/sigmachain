@@ -24,7 +24,7 @@ class LoginController extends BaseController {
 		{
 			$company = Company::where('email', '=', $email)->first();
 			$id = $company->id;
-
+			Session::put('company_id', $id);
 			$result = array (
 				"result" => true,
 				"id" => $id
