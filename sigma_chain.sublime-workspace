@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"compa",
+				"company"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
 				"addClass",
 				"addClassToOneInGroup"
 			],
@@ -34,10 +42,6 @@
 			[
 				"e",
 				"each"
-			],
-			[
-				"co",
-				"console"
 			],
 			[
 				"ma",
@@ -126,10 +130,6 @@
 			[
 				"cou",
 				"country"
-			],
-			[
-				"compa",
-				"companies"
 			],
 			[
 				"ex",
@@ -520,10 +520,50 @@
 	"buffers":
 	[
 		{
-			"file": "/C/Users/Marcius/Dropbox/MyProjects/eskill/new/powerpoint/body.html",
+			"file": "/D/Dashio/Dashio - Dashboard/Theme/advanced_form_components.html",
 			"settings":
 			{
-				"buffer_size": 69556,
+				"buffer_size": 35303,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/views/pages/dashboards/company_owner_dashboard.blade.php",
+			"settings":
+			{
+				"buffer_size": 362,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/routes.php",
+			"settings":
+			{
+				"buffer_size": 966,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/layouts/dashboard_master.blade.php",
+			"settings":
+			{
+				"buffer_size": 1671,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Dashio/Dashio - Dashboard/Theme/advanced_table.html",
+			"settings":
+			{
+				"buffer_size": 49659,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/views/js_footers/dashboards/dashboard_home.blade.php",
+			"settings":
+			{
+				"buffer_size": 1612,
 				"line_ending": "Windows"
 			}
 		}
@@ -596,6 +636,41 @@
 	},
 	"file_history":
 	[
+		"/C/wamp/www/sigmachain_repo/app/views/pages/dashboards/dashboard.blade.php",
+		"/D/Dashio/Dashio - Dashboard/Theme/404.html",
+		"/D/Dashio/Dashio - Dashboard/Theme/500.html",
+		"/C/wamp/www/sigmachain_repo/app/views/headers/dashboard_home.blade.php",
+		"/C/wamp/www/sigmachain_repo/app/views/footers/dashboard.blade.php",
+		"/C/wamp/www/sigmachain_repo/app/views/layouts/dashboard_master.blade.php",
+		"/C/wamp/www/sigmachain_repo/app/views/sidebars/dashboard_home_owner.blade.php",
+		"/C/wamp/www/sigmachain_repo/app/views/sidebars/dashboard_home_guest.blade.php",
+		"/C/wamp/www/sigmachain_repo/app/views/pages/registration_confirm.blade.php",
+		"/C/wamp/www/sigmachain_repo/app/views/layouts/home_master.blade.php",
+		"/C/wamp/www/sigmachain_repo/app/views/js_footers/home.blade.php",
+		"/C/wamp/www/sigmachain_repo/app/controllers/LoginController.php",
+		"/C/wamp/www/sigmachain_repo/app/helpers/Helpers.php",
+		"/C/wamp/www/sigmachain_repo/app/controllers/RegistrationController.php",
+		"/C/wamp/www/sigmachain_repo/app/config/local/mail.php",
+		"/C/wamp/www/sigmachain_repo/.env.local.php",
+		"/C/wamp/www/sigmachain_repo/app/routes.php",
+		"/C/wamp/www/sigmachain_repo/app/views/footers/copyright.blade.php",
+		"/C/wamp/www/sigmachain_repo/app/views/home.blade.php",
+		"/C/wamp/www/sigmachain_repo/app/views/headers/home.blade.php",
+		"/C/wamp/www/sigmachain_repo/public/js/main.js",
+		"/C/wamp/www/sigmachain_repo/public/css/custom.scss",
+		"/C/wamp/www/sigmachain_repo/app/config/local/database.php",
+		"/C/wamp/www/sigmachain_repo/app/views/footers/home.blade.php",
+		"/C/wamp/www/sigmachain_repo/app/views/registration.blade.php",
+		"/C/wamp/www/sigmachain_repo/public/js/home.js",
+		"/C/wamp/www/sigmachain_repo/.env.server.php",
+		"/C/wamp/www/sigmachain_repo/app/views/js_footers/custom.blade.php",
+		"/C/wamp/www/sigmachain_repo/app/views/js_footers/default.blade.php",
+		"/C/wamp/www/sigmachain_repo/public/bootstrap/front_end/css/style.css",
+		"/D/Dashio/Dashio - FrontEnd/Theme/index.html",
+		"/D/theme/Special Gift.txt",
+		"/D/Dashio/Dashio - Dashboard/Theme/advanced_form_components.html",
+		"/D/theme/Dashio - Dashboard/Theme/advanced_table.html",
+		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/powerpoint/body.html",
 		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/outlook/internal_testing/simulator-init.php",
 		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/powerpoint/styles/document.css",
 		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/powerpoint/scripts/main.js",
@@ -620,7 +695,6 @@
 		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/excel/internal_testing/questions_jsons/4/json.txt",
 		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/excel/internal_testing/questions_jsons/2/json.txt",
 		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/excel/internal_testing/questions_jsons/3/json.txt",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/powerpoint/body.html",
 		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/word/questions/question1/scripts/question1.js",
 		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/powerpoint/internal_testing/index.php",
 		"/C/Program Files/Sublime Text 2/s.bat",
@@ -634,12 +708,10 @@
 		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/powerpoint/styles/ribbon.css",
 		"/C/Users/Marcius/Downloads/handlebars-v1.3.0 (1).js",
 		"/C/wamp/www/sigmachain_repo/app/config/server/mail.php",
-		"/C/wamp/www/sigmachain_repo/.env.server.php",
 		"/C/Users/Marcius/AppData/Local/Temp/fz3temp-1/mail.php",
 		"/C/wamp/www/sigmachain_repo/app/config/server/database.php",
 		"/C/wamp/www/sigmachain_repo/app/config/server/remote.php",
 		"/C/Users/Marcius/Dropbox/MyProjects/side_projects/sigmaProject/db/sigma_chain.sql",
-		"/C/wamp/www/sigmachain_repo/.env.local.php",
 		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/word/styles/ribbon.css",
 		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/simulators/framework/SpriteMachine.jsx",
 		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/outlook/scripts/main.js",
@@ -650,18 +722,12 @@
 		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/powerpoint/internal_testing/head_dev.html",
 		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/outlook/styles/new_message.css",
 		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/outlook/scripts/main.min.js",
-		"/C/wamp/www/sigmachain_repo/public/js/main.js",
 		"/C/wamp/www/sigmachain_repo/public/js/registration.js",
-		"/C/wamp/www/sigmachain_repo/app/views/registration.blade.php",
-		"/C/wamp/www/sigmachain_repo/app/routes.php",
-		"/C/wamp/www/sigmachain_repo/app/controllers/LoginController.php",
-		"/C/wamp/www/sigmachain_repo/app/controllers/RegistrationController.php",
 		"/C/wamp/www/sigmachain_repo/app/filters.php",
 		"/C/wamp/www/sigmachain_repo/app/models/Company.php",
 		"/C/wamp/www/sigmachain_repo/app/config/local/auth.php",
 		"/C/wamp/www/sigmachain_repo/app/config/local/app.php",
 		"/C/wamp/www/sigmachain_repo/app/models/User.php",
-		"/C/wamp/www/sigmachain_repo/app/config/local/database.php",
 		"/C/wamp/www/sigmachain_repo/vendor/laravel/framework/src/Illuminate/Auth/AuthManager.php",
 		"/C/wamp/www/sigmachain_repo/vendor/laravel/framework/src/Illuminate/Auth/EloquentUserProvider.php",
 		"/C/wamp/www/sigmachain_repo/app/database/migrations/2014_05_17_090217_create_companies_table.php",
@@ -697,37 +763,11 @@
 		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/simulators/powerpoint/internal_testing/simulator-init.php",
 		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/excel/questions/question13/scripts/question13.js",
 		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/simulators/powerpoint/internal_testing/index.php",
-		"/C/wamp/www/sigmachain_repo/app/views/emails/register/register.blade.php",
-		"/C/wamp/www/sigmachain_repo/app/helpers/Helpers.php",
-		"/C/wamp/www/sigmachain_repo/bootstrap/start.php",
-		"/C/wamp/www/sigmachain_repo/app/config/local/mail.php",
-		"/C/wamp/www/sigmachain_repo/.gitignore",
-		"/C/wamp/www/sigmachain_repo/app/views/pages/registration_confirm.blade.php",
-		"/C/wamp/www/sigmachain_repo/app/database/migrations/2014_05_18_100942_add_confirm_key_for_companies.php",
-		"/C/wamp/www/sigmachain_repo/app/database/migrations/2014_05_18_101736_drop_companies_registration_status.php",
-		"/C/wamp/www/sigmachain_repo/app/views/headers/home.blade.php",
-		"/C/wamp/www/sigmachain_repo/app/lang/en/pagination.php",
-		"/C/wamp/www/old/clinics_social_network/controllers/front_controller.php",
-		"/C/wamp/www/sigmachain_repo/app/start/global.php",
-		"/C/wamp/www/sigmachain_repo/app/views/footers/home.blade.php",
-		"/C/wamp/www/sigmachain_repo/app/views/layouts/master.blade.php",
-		"/C/wamp/www/sigmachain_repo/app/config/database.php",
-		"/C/wamp/www/sigmachain_repo/app/controllers/HomeController.php",
-		"/C/wamp/www/sigmachain_repo/app/controllers/BaseController.php",
-		"/C/wamp/www/sigmachain_repo/app/views/emails/register/register.php",
-		"/C/wamp/www/sigmachain_repo/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/HasMany.php",
-		"/C/wamp/www/sigmachain_repo/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/HasOneOrMany.php",
-		"/C/wamp/www/sigmachain_repo/app/views/registration.blade..php",
-		"/C/wamp/www/sigmachain_repo/app/views/emails/auth/reminder.blade.php",
-		"/C/wamp/www/sigmachain_repo/public/index.php",
-		"/H/MyProjects/eskill/app_resources_svn/scripts/main.min.js",
-		"/H/MyProjects/eskill/app_resources_svn/questions/question41/scripts/question41.js",
-		"/H/MyProjects/eskill/app_resources_svn/styles/simulator.css",
-		"/H/MyProjects/eskill/app_resources_svn/internal_testing/simulator-init.php"
+		"/C/wamp/www/sigmachain_repo/app/views/emails/register/register.blade.php"
 	],
 	"find":
 	{
-		"height": 58.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -742,6 +782,38 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"assets/",
+			"bootstrap/",
+			"bootstrap",
+			"assets",
+			"assets/",
+			"$company",
+			"$link",
+			"modal-",
+			"Register",
+			"registration-thumb",
+			"#b19d6f",
+			"Company Registration",
+			"btn btn-block btn-primary",
+			"dmbutton",
+			"login",
+			"col-sm-4",
+			"2",
+			"8",
+			"{}",
+			"site-header clearfix",
+			"col-lg-9 col-md-12 col-sm-12",
+			"col-lg-3 col-md-3",
+			"Lifetime Warranty",
+			"front-end",
+			"demos/",
+			"front_end/",
+			"assets/",
+			"js/",
+			"assets/",
+			"<script",
+			"script",
+			"assets/",
 			"ctrl+m",
 			"setActiveSlide",
 			"slide",
@@ -837,41 +909,9 @@
 			"createNormalDocumentArea",
 			"setDynamicSlidesChangeListeners",
 			"shortDaysArray2",
-			"today",
-			"add",
-			"$company",
-			"result",
-			"var",
-			"user",
-			"Auth",
-			"4",
-			"exampleInputPassword1",
-			"exampleInputEmail1",
-			"http://sigmachain.com",
-			"createContentArea",
-			"setListeners",
-			"tab-slides",
-			"slide",
-			"powerpoint-slide-0",
-			"cloningListeners",
-			"createContentArea",
-			"content-left",
-			"createContentArea",
-			"this.implementedCallbacks",
-			"createContentArea",
-			"rightClickDropdownsListeners",
-			"bodylisteners",
-			"notes-v",
-			"normal-view",
-			".normal-view",
-			"pp-normal-view",
-			"pp-home-slides-item1",
-			"ribbonStructureListeners",
-			"tabNavigationListeners",
-			"set",
-			"group"
+			"today"
 		],
-		"highlight": true,
+		"highlight": false,
 		"in_selection": false,
 		"preserve_case": false,
 		"regex": false,
@@ -882,39 +922,216 @@
 		"show_context": false,
 		"use_buffer2": false,
 		"whole_word": false,
-		"wrap": true
+		"wrap": false
 	},
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 5,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/C/Users/Marcius/Dropbox/MyProjects/eskill/new/powerpoint/body.html",
+					"file": "/D/Dashio/Dashio - Dashboard/Theme/advanced_form_components.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 69556,
+						"buffer_size": 35303,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								31349,
-								31349
+								33390,
+								33708
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 10571.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/views/pages/dashboards/company_owner_dashboard.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 362,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								353,
+								353
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/routes.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 966,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								832,
+								832
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": -0.0,
+						"translation.y": 108.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/views/layouts/dashboard_master.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1671,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								501,
+								501
+							],
+							[
+								598,
+								598
+							],
+							[
+								722,
+								722
+							],
+							[
+								844,
+								844
+							],
+							[
+								960,
+								960
+							],
+							[
+								1082,
+								1082
+							],
+							[
+								1203,
+								1203
+							],
+							[
+								1346,
+								1346
+							],
+							[
+								1415,
+								1415
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 10261.0,
+						"translation.y": 162.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/D/Dashio/Dashio - Dashboard/Theme/advanced_table.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 49659,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								516,
+								516
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/views/js_footers/dashboards/dashboard_home.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1612,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1053,
+								1053
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": -0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -998,8 +1215,8 @@
 	"show_minimap": true,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": false,
-	"side_bar_width": 233.0,
+	"side_bar_visible": true,
+	"side_bar_width": 219.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

@@ -38,6 +38,22 @@ window[nameSpaceName] = {
 		}else {
 			return false;
 		}
+	},
+
+	GoogleMapsInit: function(coordinate1, coordinate2) {
+		var myLatlng = new google.maps.LatLng(40.6700, -73.9400);
+	    var mapOptions = {
+	        zoom: 11,
+	        scrollwheel: false,
+	        center: myLatlng,
+	        mapTypeId: google.maps.MapTypeId.ROADMAP
+	    }
+	    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+	    var marker = new google.maps.Marker({
+	        position: myLatlng,
+	        map: map,
+	        title: 'Dashio Admin Theme!'
+	    });
 	}
 }
 
@@ -325,5 +341,11 @@ Sigma.prototype = {
 			$("#login-button").click();
 		});
 
+	},
+
+	dashboardListeners : function() {
+		$(window).load(function(){
+	        sigma.GoogleMapsInit();
+    	});
 	}
 }

@@ -32,6 +32,7 @@ return array(
     'ClassPreloader\\Parser\\NodeTraverser' => $vendorDir . '/classpreloader/classpreloader/src/ClassPreloader/Parser/NodeTraverser.php',
     'Company' => $baseDir . '/app/models/Company.php',
     'CreateCompaniesTable' => $baseDir . '/app/database/migrations/2014_05_17_090217_create_companies_table.php',
+    'CreateCompanyDataTable' => $baseDir . '/app/database/migrations/2014_06_09_170613_create_company_data_table.php',
     'Crypt_AES' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Crypt/AES.php',
     'Crypt_Base' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Crypt/Base.php',
     'Crypt_Blowfish' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Crypt/Blowfish.php',

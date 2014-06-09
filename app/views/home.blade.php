@@ -30,7 +30,7 @@
     <section class="section1">
     	<div class="container clearfix">
             <div class="col-md-1"></div>
-			<div class="content col-md-9">
+			<div class="content col-md-9 home-page-registration">
                 <h3 id="registration-title" class="text-center text-info">Company Registration</h3>
                 <form action="/register" method="POST" class="form-horizontal" role="form" id="main-registration-form">
                     <hr>
@@ -489,3 +489,4 @@
       <!-- Main Scripts-->
     @include('js_footers.home')
 </body>
+@stop

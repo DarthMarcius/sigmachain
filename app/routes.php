@@ -22,13 +22,12 @@ Route::get('/register', 'RegistrationController@confirmRegistration');
 
 Route::post("/login", "LoginController@login");
 
-Route::get("/company/{id}", array('before' => 'auth', function()
+Route::get("/company/{id}", array('before' => 'auth', 'as' => 'company_id', 'uses' => 'DashboardController@displayDashboard'));
+/*Route::get("/company/{id}", array('before' => 'auth', function($id)
 {
-	//Session::put('company_id', "5");
-	//Auth::logout();
-	var_dump(Session::get('company_id'));
-    // Only authenticated users may enter...
-}));
+	return View::make('pages.dashboards.company_owner_dashboard');
+	//var_dump(Session::get('company_id'));
+}));*/
 /*Route::post('/login', function()
 {
 	if(Request::ajax()) {

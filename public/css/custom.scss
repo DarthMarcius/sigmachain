@@ -1,13 +1,4 @@
 $primary-color: #b19d6f;
-.navbar-brand {
-	padding: 5px;
-	width: 90px;
-}
-
-/*#chain-description {
-	color: #0e385f;
-	font-family: 'lucida grande',tahoma,verdana,arial,sans-serif
-}*/
 
 #market-wrapper {
 	header {
@@ -22,29 +13,62 @@ $primary-color: #b19d6f;
 	}
 }
 
-#registration-title {
-	color: $primary-color;
-}
-#main-registration-form {
-	color: $primary-color;
-}
-
-#login-modal {
-	form {
+.home-page-registration {
+	#registration-title {
 		color: $primary-color;
 	}
-	#myModalLabel {
-		color: $primary-color !important;
+	#main-registration-form {
+		color: $primary-color;
+	}
+
+	#login-modal {
+		form {
+			color: $primary-color;
+		}
+		#myModalLabel {
+			color: $primary-color !important;
+		}
+	}
+
+	.main-page-text {
+		margin-left: 5px;
+		color: $primary-color;
 	}
 }
-
-.main-page-text {
-	margin-left: 5px;
-	color: $primary-color;
-}
-
 /*@media only screen and (max-width: 916px) and (min-width: 768px) {
 	.collapse {
 		display: none;
 	}
 }*/
+$dashboard-color: #48cfad;
+.dashboard-panels {
+	margin: 25px -10px 0 -10px;
+	.row {
+		margin-right : -10px !important;
+		margin-left : -10px !important;
+	}
+	#company-contacts {
+		h3 {
+			margin-bottom: 30px;
+		}
+		h4 {
+			width: 100%;
+			float: left;
+		}
+	}
+
+	.sub-link {
+		color: $dashboard-color;
+		font-weight: bold;
+	}
+}
+#edit {
+	form {
+		margin-bottom: 35px; 
+	}
+}
+#sidebar {
+	a:hover {
+		cursor: pointer;
+	}
+}
