@@ -20,6 +20,9 @@
 		display: none;
 	}
 }*/
+#logo-upload-progressbar, #logo-upload-form {
+  display: none; }
+
 .dashboard-panels {
   margin: 25px -10px 0 -10px; }
   .dashboard-panels .row {

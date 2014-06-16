@@ -10,9 +10,18 @@
     <script src="../bootstrap/assets/js/common-scripts.js"></script>
 
     <!--script for this page-->
-    <script src="../bootstrap/assets/js/jquery-ui-1.9.2.custom.min.js"></script>
+    <!--<script src="../bootstrap/assets/js/jquery-ui-1.9.2.custom.min.js"></script>-->
+
+    <!--<script src="../bootstrap/assets/js/file-uploader/js/vendor/jquery.ui.widget.js"></script>
+	<script type="text/javascript" src="../bootstrap/assets/js/file-uploader/js/jquery.iframe-transport.js"></script>	
+	<script type="text/javascript" src="../bootstrap/assets/js/bootstrap-fileupload/bootstrap-fileupload.js"></script>	-->
+	<script src="../bootstrap/assets/js/file-uploader/js/vendor/jquery.ui.widget.js"></script>
+	<script type="text/javascript" src="../bootstrap/assets/js/file-uploader/js/jquery.iframe-transport.js"></script>
+	<script type="text/javascript" src="../bootstrap/file_upload/jquery.fileupload.js"></script>
 	
-	<script type="text/javascript" src="../bootstrap/assets/js/bootstrap-fileupload/bootstrap-fileupload.js"></script>	
+	<!--<script type="text/javascript" src="../bootstrap/assets/js/file-uploader/js/jquery.fileupload-process.js"></script>
+	<script type="text/javascript" src="../bootstrap/assets/js/file-uploader/js/jquery.fileupload-ui.jss"></script>		-->
+
 	<script type="text/javascript" src="../bootstrap/assets/js/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 	<script type="text/javascript" src="../bootstrap/assets/js/bootstrap-daterangepicker/date.js"></script>
 	<script type="text/javascript" src="../bootstrap/assets/js/bootstrap-daterangepicker/daterangepicker.js"></script>

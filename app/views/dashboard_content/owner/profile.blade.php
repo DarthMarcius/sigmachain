@@ -6,7 +6,7 @@
                             <p class="text-center">
                                 <a class = "sub-link" target="_blanc" href="http://www.gps-coordinates.net/">You can get this data from here</a>
                             </p>
-							<form action="/register" method="POST" class="form-horizontal" role="form" id="change-gps">
+							<form id="gps-form" action="/register" method="POST" class="form-horizontal" role="form">
                                 <div class="form-group">
                                     <label for="company-latitude" class="col-sm-2 control-label">
                                         Latitude
@@ -43,9 +43,22 @@
 						<div class="col-md-4 centered">
 							<div class="profile-pic">
 								<p><img src="../bootstrap/assets/img/ui-sam.jpg" class="img-circle"></p>
+                                <div class="row">
+                                    <div class="col-sm-offset-2 col-sm-8" id="logo-upload-progressbar">
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                                <span class="sr-only">0% Complete</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 								<p>
-									<button class="btn btn-theme"><i class="fa fa-arrow-up"></i> Upload New Company Logo </button>
+									<button class="btn btn-theme" id="logo-upload-trigger"><i class="fa fa-arrow-up"></i> Upload New Company Logo </button>
 								</p>
+                                <form id = "logo-upload-form" action="/company/owner/profile_update/logo" enctype="multipart/form-data" method="POST">
+                                    <input id="logo-upload" type="file" name="photo">
+                                    <button type="submit">submit</button>
+                                </form>
 							</div>
 						</div><!--/col-md-4 -->
 					</div><!-- /row -->	   
@@ -57,7 +70,7 @@
                             <div class="row">
                                 <div class="col-lg-8 col-lg-offset-2 detailed">
                                     <h4 class="mb">Company Information</h4>
-                                    <form action="/register" method="POST" class="form-horizontal" role="form" id="main-registration-form">
+                                    <form id="company-info-form" action="/register" method="POST" class="form-horizontal" role="form">
                                         <div class="form-group">
                                             <label for="company-name-input" class="col-sm-3 control-label">
                                                 Company Name
@@ -346,7 +359,7 @@
                                     </form>
 
                                     <h4 class="mb">Contact Information</h4>
-                                    <form action="/register" method="POST" class="form-horizontal" role="form" id="contact-info-form">
+                                    <form method="POST" class="form-horizontal" role="form" id="contact-info-form">
                                         <div class="form-group">
                                             <label for="company-address1" class="col-sm-3 control-label">
                                                 Address
@@ -389,7 +402,7 @@
                                     </form>
 
                                     <h4 class="mb">Change Password</h4>
-                                    <form action="/register" method="POST" class="form-horizontal" role="form" id="change-password">
+                                    <form method="POST" class="form-horizontal" role="form" id="change-password-form">
                                         <div class="form-group">
                                             <label for="old-password" class="col-sm-3 control-label">Old Password</label>
                                             <div class="col-sm-8">
@@ -423,7 +436,7 @@
                                     </form>
 
                                     <h4 class="mb">Change Email</h4>
-                                    <form action="/register" method="POST" class="form-horizontal" role="form" id="change-email">
+                                    <form method="POST" class="form-horizontal" role="form" id="change-email-form">
                                         <div class="form-group">
                                             <label for="company-email" class="col-sm-3 control-label">New Email</label>
                                             <div class="col-sm-8">

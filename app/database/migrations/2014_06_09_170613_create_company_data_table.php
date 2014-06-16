@@ -21,6 +21,7 @@ class CreateCompanyDataTable extends Migration {
 			$table->float('latitude');
 			$table->float('longitude');
 			$table->string('logo_url', 100);
+			$table->timestamps();
 		});
 	}
 

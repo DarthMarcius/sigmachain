@@ -40,8 +40,53 @@ window[nameSpaceName] = {
 		}
 	},
 
+	imageExtIsCorrect: function(str) {
+		//var ext = str.match(/\.(.+)$/)[1];
+		//console.log(str)
+		//console.log((/\.(gif|jpg|jpeg|png)$/i).test(str))
+		if ((/\.(gif|jpg|jpeg|png)$/i).test(str)) {  //console.log("yes")            
+    		return true;
+    	}else {//console.log("no")
+    		return false;
+    	}
+	},
+
+	inputIsValidLatitudeOrLongitude: function($input) {
+		if(!isNaN($input.val())) {
+			if($input.val().length > 0) {
+				if($input.val() >= -180 && $input.val() <= 180) {
+					return true;
+				}
+			}else {
+				return false;
+			}
+		}else {
+			return false;
+		}
+	},
+	skypeNameIsValid: function($input) {
+		if($input.val().length > 50) {
+			return false;
+		}else {
+			return true;
+		}
+	},
+	companyAddressIsValid: function($input) {
+		if($input.val().length > 100) {
+			return false;
+		}else {
+			return true;
+		}
+	},
+	companyPhoneIsValid: function($input) {
+		if($input.val().length > 50) {
+			return false;
+		}else {
+			return true;
+		}
+	},
 	GoogleMapsInit: function(coordinate1, coordinate2) {
-		var myLatlng = new google.maps.LatLng(40.6700, -73.9400);
+		var myLatlng = new google.maps.LatLng(12.00, 15.00);
 	    var mapOptions = {
 	        zoom: 11,
 	        scrollwheel: false,
@@ -347,5 +392,479 @@ Sigma.prototype = {
 		$(window).load(function(){
 	        sigma.GoogleMapsInit();
     	});
+		// formValidationListeners
+		$(".wrapper").on("focus", "#company-latitude", function(ev) {
+			$("#gps-form *").tooltip("destroy");
+			if($(ev.target).closest(".form-group").hasClass("has-error")) {
+				$(ev.target).closest(".form-group").removeClass("has-error");
+				if(!sigma.inputIsValidLatitudeOrLongitude($(ev.target))) {
+					$(ev.target).tooltip({
+						'trigger':'manual',
+						"title" : "Latitude must be a number less than 180 and more than -180."
+					});
+					$(ev.target).tooltip("show");
+				}
+			}
+			
+		});
+
+		$(".wrapper").on("blur", "#company-latitude", function(ev) {
+			if(!sigma.inputIsValidLatitudeOrLongitude($(ev.target))) {
+				$(ev.target).closest(".form-group").addClass("has-error");
+			}
+		});
+
+		$(".wrapper").on("focus", "#company-longitude", function(ev) {
+			$("#gps-form *").tooltip("destroy");
+			if($(ev.target).closest(".form-group").hasClass("has-error")) {
+				$(ev.target).closest(".form-group").removeClass("has-error");
+				if(!sigma.inputIsValidLatitudeOrLongitude($(ev.target))) {
+					$(ev.target).tooltip({
+						'trigger':'manual',
+						"title" : "Longitude must be a number less than 180 and more than -180."
+					});
+					$(ev.target).tooltip("show");
+				}
+			}
+			
+		});
+
+		$(".wrapper").on("blur", "#company-longitude", function(ev) {
+			if(!sigma.inputIsValidLatitudeOrLongitude($(ev.target))) {
+				$(ev.target).closest(".form-group").addClass("has-error");
+			}
+		});
+		// formValidationListeners end
+    	/*owner*/
+    	$(".owner-sidebar .dashboard-thumb").click(function() {//get dashboard
+    		$.ajax({
+				url: "/company/owner/dashboard",
+				type : "GET",
+				dataType: "json",
+				success: function(data) {
+					//console.log(data.html)
+					$("#main-content .wrapper").html("");
+					$("#main-content .wrapper").append($(data.html));
+					sigma.GoogleMapsInit();
+				}
+			})
+    	});
+
+    	$(".owner-sidebar .profile-settigs-thumb").click(function() {//get profile
+    		$.ajax({
+				url: "/company/owner/profile",
+				type : "GET",
+				dataType: "json",
+				success: function(data) {
+					//console.log(data.html)
+					$("#main-content .wrapper").html("");
+					$("#main-content .wrapper").append($(data.html));
+					initFileupload();
+				}
+			})
+    	});
+    	// profileUpdate
+    	$(".wrapper").on("submit", "#gps-form",function(ev) {
+    		if($("#gps-form .form-group.has-error").length == 0) {
+    			if($("#company-latitude").val() == "" && $("#company-longitude").val() == "") {
+    				$("#company-latitude").focus();
+    			} else {//ok
+		    		$.ajax({
+						url: "/company/owner/profile_update/gps",
+						type : "POST",
+						data: {
+							'latitude' : $("#company-latitude").val(),
+							'longitude' : $("#company-longitude").val()
+						},
+						dataType: "json",
+						success: function(data) {
+							//console.log(data.result)
+							if(data.result == "ok") {
+								$('#gps-confirm-modal').modal({
+									keyboard: true
+								});
+							}
+							/*$("#main-content .wrapper").html("");
+							$("#main-content .wrapper").append($(data.html));*/
+						}
+					})	
+				}
+    		}else {
+    			$($("#gps-form .form-group.has-error")[0]).find("input").focus();
+    		}
+    		ev = $.event.fix(ev);
+	    	ev.preventDefault();
+    	});
+
+    	$(".ok-button").click(function(ev) {
+    		var id = $(ev.target).parents(".modal")[0].id;
+    		$('#'+id).modal('hide');
+    	});
+
+    	function initFileupload() {
+		    $("#logo-upload-form").fileupload({
+			    dataType: 'json',
+			    progressall: function (e, data) {
+			    	var progress = parseInt(data.loaded / data.total * 100, 10);
+			    	$("#logo-upload-progressbar .progress-bar").css("width", progress + "%");
+			 	},
+			 	submit: function (e, data) {
+		    		if(!sigma.imageExtIsCorrect(data.files[0].name)) {
+		    			$("#logo-upload-trigger").tooltip("destroy");
+		    			$("#logo-upload-trigger").tooltip({
+							'trigger':'manual',
+							"title" : "File must be an image.",
+							"placement" : "bottom"
+						});
+						$("#logo-upload-trigger").tooltip("show");
+						setTimeout(function() {
+							$("#logo-upload-trigger").tooltip("destroy");
+						}, 5000)
+		    			return false;
+		    		}
+
+		    		if(data.files[0].size >= 5000000 ) {
+		    			$("#logo-upload-trigger").tooltip("destroy");
+		    			$("#logo-upload-trigger").tooltip({
+							'trigger':'manual',
+							"title" : "File size must be less than 5mb.",
+							"placement" : "bottom"
+						});
+						$("#logo-upload-trigger").tooltip("show");
+						setTimeout(function() {
+							$("#logo-upload-trigger").tooltip("destroy");
+						}, 5000)
+		    			return false;
+		    		}
+			    },
+			    send: function(e, data) {
+			    	$("#logo-upload-trigger").tooltip("destroy");
+			    	$("#logo-upload-progressbar").show();
+			    },
+			    done: function (e, data) {
+			    	$("#logo-upload-progressbar").hide();
+			    	$("#logo-upload-progressbar .progress-bar").css("width", "0%");
+			    	changeLogoLive();
+			    }
+		    });
+	    };
+
+	    function changeLogoLive() {
+	    	$.ajax({
+				url: "/company/owner/logo-update-live",
+				type : "GET",
+				dataType: "json",
+				success: function(data) {
+					var src = "../img/logos/" + data.url;
+					$("#nav-accordion img, .profile-pic img").attr("src", src);
+				}
+			});
+	    };
+    	
+    	$(".wrapper").on("click", "#logo-upload-trigger", function() {
+    		$("#logo-upload").click();
+    	});
+
+    	// update default company data
+    	// COMPANY INFORMATION
+    	$(".wrapper").on("blur", "#company-name-input", function(ev) {
+			if(!sigma.CompanyNameIsCorrect($(ev.target))) {
+				$(ev.target).closest(".form-group").addClass("has-error");
+			}
+		});
+
+		$(".wrapper").on("focus", "#company-name-input", function(ev) {
+			$("#company-info-form *").tooltip("destroy");
+			if($(ev.target).closest(".form-group").hasClass("has-error")) {
+				$(ev.target).closest(".form-group").removeClass("has-error");
+				if(!sigma.CompanyNameIsCorrect($(ev.target))) {
+					$(ev.target).tooltip({
+						'trigger':'manual',
+						"title" : "Company name need to have at least one letter, but no more than 50."
+					});
+					$(ev.target).tooltip("show");
+				}
+			}
+			
+		});
+		$(".wrapper").on("blur", "#company-description", function(ev) {
+			if(!sigma.CompanyDescriptionIsCorrect($(ev.target))) {
+				$(ev.target).closest(".form-group").addClass("has-error");
+			}
+		});
+
+		$(".wrapper").on("focus", "#company-description", function(ev) {
+			$("#company-info-form *").tooltip("destroy");
+			if($(ev.target).closest(".form-group").hasClass("has-error")) {
+				$(ev.target).closest(".form-group").removeClass("has-error");
+				if(!sigma.CompanyDescriptionIsCorrect($(ev.target))) {
+					$(ev.target).tooltip({
+						'trigger':'manual',
+						"title" : "Company description needs to be less than 300 characters."
+					});
+					$(ev.target).tooltip("show");
+				}
+			}
+			
+		});
+		// COMPANY INFORMATION END
+		// CONTACT INFORMATION
+		$(".wrapper").on("blur", "#company-address1", function(ev) {
+			if(!sigma.companyAddressIsValid($(ev.target))) {
+				$(ev.target).closest(".form-group").addClass("has-error");
+			}
+		});
+
+		$(".wrapper").on("focus", "#company-address1", function(ev) {
+			$("#contact-info-form *").tooltip("destroy");
+			if($(ev.target).closest(".form-group").hasClass("has-error")) {
+				$(ev.target).closest(".form-group").removeClass("has-error");
+				if(!sigma.companyAddressIsValid($(ev.target))) {
+					$(ev.target).tooltip({
+						'trigger':'manual',
+						"title" : "Company address should have no more than 100 characters."
+					});
+					$(ev.target).tooltip("show");
+				}
+			}
+		});
+
+		$(".wrapper").on("blur", "#company-phone", function(ev) {
+			if(!sigma.companyPhoneIsValid($(ev.target))) {
+				$(ev.target).closest(".form-group").addClass("has-error");
+			}
+		});
+
+		$(".wrapper").on("focus", "#company-phone", function(ev) {
+			$("#contact-info-form *").tooltip("destroy");
+			if($(ev.target).closest(".form-group").hasClass("has-error")) {
+				$(ev.target).closest(".form-group").removeClass("has-error");
+				if(!sigma.companyPhoneIsValid($(ev.target))) {
+					$(ev.target).tooltip({
+						'trigger':'manual',
+						"title" : "Company phone can not have more than 50 characters."
+					});
+					$(ev.target).tooltip("show");
+				}
+			}
+		});
+
+		$(".wrapper").on("blur", "#company-skype", function(ev) {
+			if(!sigma.skypeNameIsValid($(ev.target))) {
+				$(ev.target).closest(".form-group").addClass("has-error");
+			}
+		});
+
+		$(".wrapper").on("focus", "#company-skype", function(ev) {
+			$("#contact-info-form *").tooltip("destroy");
+			if($(ev.target).closest(".form-group").hasClass("has-error")) {
+				$(ev.target).closest(".form-group").removeClass("has-error");
+				if(!sigma.skypeNameIsValid($(ev.target))) {
+					$(ev.target).tooltip({
+						'trigger':'manual',
+						"title" : "Company skype can not have more than 50 characters."
+					});
+					$(ev.target).tooltip("show");
+				}
+			}
+		});
+		// CONTACT INFORMATION END
+		// CHANGE PASSWORD
+		$(".wrapper").on("blur", "#old-password", function(ev) {
+			if(!sigma.checkValidPassword($(ev.target))) {
+				$(ev.target).closest(".form-group").addClass("has-error");
+			}else {
+				if(sigma.checkValidPassword($("#password-confirm"))) {
+					$("#password-confirm").closest(".form-group").removeClass("has-error");
+				}
+			}
+			
+		});
+
+		$(".wrapper").on("focus", "#old-password", function(ev) {
+			$("#change-password-form *").tooltip("destroy");
+			if($(ev.target).closest(".form-group").hasClass("has-error")) {
+				$(ev.target).closest(".form-group").removeClass("has-error");
+				if(!sigma.checkValidPassword($(ev.target))) {
+					$(ev.target).tooltip({
+						'trigger':'manual',
+						"title" : "Password needs to be at least 6 characters long."
+					});
+					$(ev.target).tooltip("show");
+				}
+			}
+			
+		});
+		/////////
+		$(".wrapper").on("blur", "#password", function(ev) {
+			if(!sigma.checkValidPassword($(ev.target))) {
+				$(ev.target).closest(".form-group").addClass("has-error");
+			}else {
+				if($("#password-confirm").val().length > 0) {
+					if(!sigma.inputValuesMatch($("#password"), $("#password-confirm"))) {//if passwords dont match
+						$(ev.target).closest(".form-group").addClass("has-error");
+					}else {//but if they match
+						if(sigma.checkValidPassword($("#password-confirm"))) {
+							$("#password-confirm").closest(".form-group").removeClass("has-error");
+						}
+					}
+				}
+			}
+			
+		});
+
+		$(".wrapper").on("focus", "#password", function(ev) {
+			$("#change-password-form *").tooltip("destroy");
+			if($(ev.target).closest(".form-group").hasClass("has-error")) {
+				$(ev.target).closest(".form-group").removeClass("has-error");
+				if(!sigma.checkValidPassword($(ev.target))) {
+					$(ev.target).tooltip({
+						'trigger':'manual',
+						"title" : "Password needs to be at least 6 characters long."
+					});
+					$(ev.target).tooltip("show");
+				}else {
+					if($("#password-confirm").val().length > 0) {
+						if(!sigma.inputValuesMatch($("#password"), $("#password-confirm"))) {//if passwords dont match
+							$(ev.target).tooltip({
+								'trigger':'manual',
+								"title" : "Passwords you entered does not match, please try again"
+							});
+							$(ev.target).tooltip("show");
+						}
+					}
+					//$(ev.target).tooltip("destroy");
+				}
+			}
+			
+		});
+
+		$(".wrapper").on("blur", "#password-confirm", function(ev) {
+			if(!sigma.checkValidPassword($(ev.target))) {
+				$(ev.target).closest(".form-group").addClass("has-error");
+			}else {
+				if($("#password").val().length > 0) {
+					if(!sigma.inputValuesMatch($("#password"), $("#password-confirm"))) {//if passwords dont match
+						$(ev.target).closest(".form-group").addClass("has-error");
+					}else {//but if they match
+						if(sigma.checkValidPassword($("#password"))) {
+							$("#password").closest(".form-group").removeClass("has-error");
+						}
+					}
+				}
+			}
+		});
+
+		$(".wrapper").on("focus", "#password-confirm", function(ev) {
+			$("#change-password-form *").tooltip("destroy");
+			if($(ev.target).closest(".form-group").hasClass("has-error")) {
+				$(ev.target).closest(".form-group").removeClass("has-error");
+				if(!sigma.checkValidPassword($(ev.target))) {
+					$(ev.target).tooltip({
+						'trigger':'manual',
+						"title" : "Password needs to be at least 6 characters long."
+					});
+					$(ev.target).tooltip("show");
+				}else {
+					if($("#password").val().length > 0) {
+						if(!sigma.inputValuesMatch($("#password"), $("#password-confirm"))) {//if passwords dont match
+							$(ev.target).tooltip({
+								'trigger':'manual',
+								"title" : "Passwords you entered does not match, please try again"
+							});
+							$(ev.target).tooltip("show");
+						}
+					}
+				}
+			}
+		});
+		// CHANGE PASSWORD END
+		// CHANGE EMAIL
+		$(".wrapper").on("blur", "#company-email", function(ev) {
+			if(!sigma.checkValidEmail($(ev.target))) {
+				$(ev.target).closest(".form-group").addClass("has-error");
+
+			}else {
+				if($("#company-email-confirm").val().length > 0) {
+					if(!sigma.inputValuesMatch($("#company-email"), $("#company-email-confirm"))) {//if emails dont match
+						$(ev.target).closest(".form-group").addClass("has-error");
+					}else {//but if they match
+						if(sigma.checkValidEmail($("#company-email-confirm"))) {
+							$("#company-email-confirm").closest(".form-group").removeClass("has-error");
+						}
+					}
+				}
+			}
+			
+		});
+
+		$(".wrapper").on("focus", "#company-email", function(ev) {
+			$("#change-email-form *").tooltip("destroy");
+			if($(ev.target).closest(".form-group").hasClass("has-error")) {
+				$(ev.target).closest(".form-group").removeClass("has-error");
+				if(!sigma.checkValidEmail($(ev.target))) {
+					$(ev.target).tooltip({
+						'trigger':'manual',
+						"title" : "Please enter a valid Email"
+					});
+					$(ev.target).tooltip("show");
+				}else {
+					if($("#company-email-confirm").val().length > 0) {
+						if(!sigma.inputValuesMatch($("#company-email"), $("#company-email-confirm"))) {//if emails dont match
+							$(ev.target).tooltip({
+								'trigger':'manual',
+								"title" : "Emails you entered does not match, please try again"
+							});
+							$(ev.target).tooltip("show");
+						}
+					}
+					//$(ev.target).tooltip("destroy");
+				}
+			}
+			
+		});
+
+		$(".wrapper").on("blur", "#company-email-confirm", function(ev) {
+			if(!sigma.checkValidEmail($(ev.target))) {
+				$(ev.target).closest(".form-group").addClass("has-error");
+			}else {
+				if($("#company-email").val().length > 0) {
+					if(!sigma.inputValuesMatch($("#company-email"), $("#company-email-confirm"))) {//if emails dont match
+						$(ev.target).closest(".form-group").addClass("has-error");
+					}else {//but if they match
+						if(sigma.checkValidEmail($("#company-email"))) {
+							$("#company-email").closest(".form-group").removeClass("has-error");
+						}
+					}
+				}
+			}
+		});
+
+		$(".wrapper").on("focus", "#company-email-confirm", function(ev) {
+			$("#change-email-form *").tooltip("destroy");
+			if($(ev.target).closest(".form-group").hasClass("has-error")) {
+				$(ev.target).closest(".form-group").removeClass("has-error");
+				if(!sigma.checkValidEmail($(ev.target))) {
+					$(ev.target).tooltip({
+						'trigger':'manual',
+						"title" : "Please enter a valid Email"
+					});
+					$(ev.target).tooltip("show");
+				}else {
+					if($("#company-email").val().length > 0) {
+						if(!sigma.inputValuesMatch($("#company-email"), $("#company-email-confirm"))) {//if emails dont match
+							$(ev.target).tooltip({
+								'trigger':'manual',
+								"title" : "Emails you entered does not match, please try again"
+							});
+							$(ev.target).tooltip("show");
+						}
+					}
+				}
+			}
+		});
+		// CHANGE EMAIL END
+    	// update default company data end
+    	/*owner end*/
 	}
 }

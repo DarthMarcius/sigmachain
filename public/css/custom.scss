@@ -41,6 +41,11 @@ $primary-color: #b19d6f;
 	}
 }*/
 $dashboard-color: #48cfad;
+// hidden elements
+#logo-upload-progressbar, #logo-upload-form {
+	display: none; 
+}
+// hidden end
 .dashboard-panels {
 	margin: 25px -10px 0 -10px;
 	.row {

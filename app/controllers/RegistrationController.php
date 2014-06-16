@@ -69,6 +69,11 @@ class RegistrationController extends BaseController {
 
 		$this->sentEmail($company->email, $company->name, $company->registration_confirm_key);
 		$company->save();
+		$company_id = $company->id;
+		$companyData = new CompanyData;
+		$companyData->company_id = $company_id;
+		$companyData->save();
+
 		return $result;
 		//echo($company::get("id"));
 	}

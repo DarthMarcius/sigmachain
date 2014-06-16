@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"company",
+				"company_id"
+			],
+			[
+				"le",
+				"length"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"fo",
+				"form"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"goo",
+				"GoogleMapsInit"
+			],
+			[
 				"compa",
 				"company"
 			],
@@ -48,10 +80,6 @@
 				"margin"
 			],
 			[
-				"fo",
-				"font"
-			],
-			[
 				"back",
 				"background-color"
 			],
@@ -88,10 +116,6 @@
 				"inline-block"
 			],
 			[
-				"re",
-				"result"
-			],
-			[
 				"json",
 				"json_encode"
 			],
@@ -106,10 +130,6 @@
 			[
 				"mou",
 				"mouseup"
-			],
-			[
-				"wi",
-				"window"
 			],
 			[
 				"data",
@@ -364,10 +384,6 @@
 				"hide"
 			],
 			[
-				"font",
-				"font-size"
-			],
-			[
 				"second",
 				"secondsStr"
 			],
@@ -394,10 +410,6 @@
 			[
 				"isie",
 				"isIESome"
-			],
-			[
-				"mar",
-				"margin"
 			],
 			[
 				"margi",
@@ -502,68 +514,101 @@
 			[
 				"sh",
 				"showPopup"
-			],
-			[
-				"activeCe",
-				"activeCellStr"
-			],
-			[
-				"visible",
-				"visiblePopup"
-			],
-			[
-				"acti",
-				"active"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "/D/Dashio/Dashio - Dashboard/Theme/advanced_form_components.html",
+			"file": "app/models/Company.php",
 			"settings":
 			{
-				"buffer_size": 35303,
-				"line_ending": "Windows"
+				"buffer_size": 1458,
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/pages/dashboards/company_owner_dashboard.blade.php",
+			"file": "app/controllers/RegistrationController.php",
 			"settings":
 			{
-				"buffer_size": 362,
-				"line_ending": "Windows"
+				"buffer_size": 4500,
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "app/routes.php",
 			"settings":
 			{
-				"buffer_size": 966,
+				"buffer_size": 1554,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/layouts/dashboard_master.blade.php",
+			"file": "app/controllers/ProfileUpdateController.php",
 			"settings":
 			{
-				"buffer_size": 1671,
+				"buffer_size": 2079,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/D/Dashio/Dashio - Dashboard/Theme/advanced_table.html",
+			"file": "app/models/CompanyData.php",
 			"settings":
 			{
-				"buffer_size": 49659,
+				"buffer_size": 241,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/views/js_footers/dashboards/dashboard_home.blade.php",
+			"file": "public/js/main.js",
 			"settings":
 			{
-				"buffer_size": 1612,
+				"buffer_size": 14009,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/controllers/DashboardController.php",
+			"settings":
+			{
+				"buffer_size": 2264,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "<div class=\"modal fade\" id=\"gps-confirm-modal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">\n  <div class=\"modal-dialog\">\n    <div class=\"modal-content\">\n      <div class=\"modal-body\">\n        sdf{You successfuly updated your office location.}eee\n        <button class=\"btn btn-block btn-theme ok-button\" value=\"OK\">\n      </div>\n    </div>\n  </div>\n</div>",
+			"file": "app/views/dashboard_content/modals.blade.php",
+			"file_size": 348,
+			"file_write_time": 130473017917699130,
+			"settings":
+			{
+				"buffer_size": 389,
+				"line_ending": "Windows",
+				"name": "<div class=\"modal fade\" id=\"myModal\" tabindex=\"-1\""
+			}
+		},
+		{
+			"contents": "html:5",
+			"settings":
+			{
+				"buffer_size": 6,
+				"line_ending": "Windows",
+				"name": "html:5"
+			}
+		},
+		{
+			"file": "app/views/dashboard_content/owner/profile.blade.php",
+			"settings":
+			{
+				"buffer_size": 37744,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/views/sidebars/dashboard_home_owner.blade.php",
+			"settings":
+			{
+				"buffer_size": 1864,
 				"line_ending": "Windows"
 			}
 		}
@@ -636,28 +681,48 @@
 	},
 	"file_history":
 	[
+		"/C/wamp/www/sigmachain_repo/app/database/migrations/2014_06_09_170613_create_company_data_table.php",
+		"/C/wamp/www/sigmachain_repo/app/controllers/RegistrationController.php",
+		"/C/wamp/www/sigmachain_repo/app/views/pages/dashboards/company_owner_dashboard.blade.php",
+		"/C/wamp/www/sigmachain_repo/app/views/js_footers/dashboards/dashboard_home.blade.php",
+		"/C/wamp/www/sigmachain_repo/app/views/pages/dashboards/company_guest_dashboard.blade.php",
+		"/C/wamp/www/sigmachain_repo/app/controllers/LoginController.php",
+		"/C/wamp/www/sigmachain_repo/app/models/CompanyData.php",
+		"/C/wamp/www/sigmachain_repo/app/filters.php",
+		"/C/wamp/www/sigmachain_repo/public/js/main.js",
+		"/C/wamp/www/sigmachain_repo/public/js/dashboard.js",
+		"/C/wamp/www/sigmachain_repo/app/views/dashboard_content/owner/dashboard.blade.php",
+		"/D/Dashio/Dashio - Dashboard/Theme/profile.html",
+		"/C/wamp/www/sigmachain_repo/app/views/sidebars/dashboard_home_owner.blade.php",
+		"/C/wamp/www/sigmachain_repo/app/views/dashboard_content/owner/profile.blade.php",
+		"/C/wamp/www/sigmachain_repo/app/views/sidebars/dashboard_home_guest.blade.php",
+		"/C/wamp/www/sigmachain_repo/app/controllers/DashboardController.php",
+		"/C/wamp/www/sigmachain_repo/app/routes.php",
+		"/C/wamp/www/sigmachain_repo/public/css/custom.scss",
+		"/C/wamp/www/sigmachain_repo/app/database/migrations/2014_05_17_090217_create_companies_table.php",
+		"/C/wamp/www/sigmachain_repo/app/views/layouts/dashboard_master.blade.php",
+		"/C/wamp/www/sigmachain_repo/public/bootstrap/assets/js/common-scripts.js",
+		"/C/wamp/www/sigmachain_repo/app/views/home.blade.php",
+		"/C/wamp/www/sigmachain_repo/app/views/test.blade.php",
+		"/C/wamp/www/sigmachain_repo/public/bootstrap/assets/css/style.css",
+		"/C/wamp/www/sigmachain_repo/app/views/pages/registration_confirm.blade.php",
+		"/D/dashtest/Dashio/Dashio - Dashboard/Theme/profile.html",
+		"/C/wamp/www/sigmachain_repo/app/views/js_footers/dashboards/4c503fd0-9e9e-481c-b78a-69b32377c158.dmp",
+		"/D/Dashio/Dashio - Dashboard/Theme/advanced_table.html",
+		"/C/wamp/www/sigmachain_repo/app/views/headers/dashboard_home.blade.php",
+		"/C/wamp/www/sigmachain_repo/app/views/footers/dashboard.blade.php",
+		"/D/Dashio/Dashio - Dashboard/Theme/assets/js/jquery.nicescroll.js",
+		"/D/Dashio/Dashio - Dashboard/Theme/advanced_form_components.html",
 		"/C/wamp/www/sigmachain_repo/app/views/pages/dashboards/dashboard.blade.php",
 		"/D/Dashio/Dashio - Dashboard/Theme/404.html",
 		"/D/Dashio/Dashio - Dashboard/Theme/500.html",
-		"/C/wamp/www/sigmachain_repo/app/views/headers/dashboard_home.blade.php",
-		"/C/wamp/www/sigmachain_repo/app/views/footers/dashboard.blade.php",
-		"/C/wamp/www/sigmachain_repo/app/views/layouts/dashboard_master.blade.php",
-		"/C/wamp/www/sigmachain_repo/app/views/sidebars/dashboard_home_owner.blade.php",
-		"/C/wamp/www/sigmachain_repo/app/views/sidebars/dashboard_home_guest.blade.php",
-		"/C/wamp/www/sigmachain_repo/app/views/pages/registration_confirm.blade.php",
 		"/C/wamp/www/sigmachain_repo/app/views/layouts/home_master.blade.php",
 		"/C/wamp/www/sigmachain_repo/app/views/js_footers/home.blade.php",
-		"/C/wamp/www/sigmachain_repo/app/controllers/LoginController.php",
 		"/C/wamp/www/sigmachain_repo/app/helpers/Helpers.php",
-		"/C/wamp/www/sigmachain_repo/app/controllers/RegistrationController.php",
 		"/C/wamp/www/sigmachain_repo/app/config/local/mail.php",
 		"/C/wamp/www/sigmachain_repo/.env.local.php",
-		"/C/wamp/www/sigmachain_repo/app/routes.php",
 		"/C/wamp/www/sigmachain_repo/app/views/footers/copyright.blade.php",
-		"/C/wamp/www/sigmachain_repo/app/views/home.blade.php",
 		"/C/wamp/www/sigmachain_repo/app/views/headers/home.blade.php",
-		"/C/wamp/www/sigmachain_repo/public/js/main.js",
-		"/C/wamp/www/sigmachain_repo/public/css/custom.scss",
 		"/C/wamp/www/sigmachain_repo/app/config/local/database.php",
 		"/C/wamp/www/sigmachain_repo/app/views/footers/home.blade.php",
 		"/C/wamp/www/sigmachain_repo/app/views/registration.blade.php",
@@ -668,7 +733,6 @@
 		"/C/wamp/www/sigmachain_repo/public/bootstrap/front_end/css/style.css",
 		"/D/Dashio/Dashio - FrontEnd/Theme/index.html",
 		"/D/theme/Special Gift.txt",
-		"/D/Dashio/Dashio - Dashboard/Theme/advanced_form_components.html",
 		"/D/theme/Dashio - Dashboard/Theme/advanced_table.html",
 		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/powerpoint/body.html",
 		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/outlook/internal_testing/simulator-init.php",
@@ -723,14 +787,12 @@
 		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/outlook/styles/new_message.css",
 		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/outlook/scripts/main.min.js",
 		"/C/wamp/www/sigmachain_repo/public/js/registration.js",
-		"/C/wamp/www/sigmachain_repo/app/filters.php",
 		"/C/wamp/www/sigmachain_repo/app/models/Company.php",
 		"/C/wamp/www/sigmachain_repo/app/config/local/auth.php",
 		"/C/wamp/www/sigmachain_repo/app/config/local/app.php",
 		"/C/wamp/www/sigmachain_repo/app/models/User.php",
 		"/C/wamp/www/sigmachain_repo/vendor/laravel/framework/src/Illuminate/Auth/AuthManager.php",
 		"/C/wamp/www/sigmachain_repo/vendor/laravel/framework/src/Illuminate/Auth/EloquentUserProvider.php",
-		"/C/wamp/www/sigmachain_repo/app/database/migrations/2014_05_17_090217_create_companies_table.php",
 		"/C/wamp/www/sigmachain_repo/app/database/migrations/2014_05_18_101937_add_bool_registration_status.php",
 		"/C/wamp/www/sigmachain_repo/app/database/migrations/2014_05_25_125010_delete_password_column.php",
 		"/C/wamp/www/sigmachain_repo/app/database/migrations/2014_05_25_125254_make_password_column_with_100_chars.php",
@@ -746,24 +808,7 @@
 		"/D/Install/Office10/Microsoft Office Professional Plus 2010 SP1 [ukr,eng] [hurtom]/crack/Settings.ini",
 		"/C/Users/Marcius/Desktop/test1/script.js",
 		"/C/Users/Marcius/Desktop/test1/handlebars.min.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/simulators/powerpoint/questions/question1/scripts/question1.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/simulators/framework/scripts/external_libs/helper_functions.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/simulators/outlook/styles/simulator.css",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/simulators/framework/scripts/main.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/simulators/framework/scripts/main.min.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/simulators/outlook/scripts/main.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/simulators/powerpoint/scripts/main.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/simulators/powerpoint/body.html",
-		"/D/Photoshop.CS6.13.0/Photoshop.CS6.13.0/App/PhotoshopCS6/Presets/Scripts/SpriteMachine.jsx",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/outlook/questions/question21/scripts/question21.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/simulators/powerpoint/scripts/main.min.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/excel/internal_testing/simulator-init.php",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/excel/questions/question16/scripts/question16.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/excel/questions/question41/scripts/question41.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/simulators/powerpoint/internal_testing/simulator-init.php",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/excel/questions/question13/scripts/question13.js",
-		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/simulators/powerpoint/internal_testing/index.php",
-		"/C/wamp/www/sigmachain_repo/app/views/emails/register/register.blade.php"
+		"/C/Users/Marcius/Dropbox/MyProjects/eskill/new/simulators/powerpoint/questions/question1/scripts/question1.js"
 	],
 	"find":
 	{
@@ -782,6 +827,63 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"eee",
+			"e",
+			".}\n",
+			"updated",
+			"sdf",
+			"span",
+			".}\n",
+			"e",
+			".}\n",
+			"sdf",
+			"5",
+			"hrl",
+			"sdf",
+			"centere",
+			"center",
+			"centere",
+			"center",
+			".}\n",
+			"\">\n",
+			".}\n",
+			"$company",
+			"latitude",
+			"checkValidPassword",
+			"#password",
+			"<form",
+			"GoogleMapsInit",
+			"company_guest_dashboard.blade.php",
+			"company-skype",
+			"active",
+			"maps.googleapis.com/maps",
+			"assets/",
+			"container",
+			"niceScroll",
+			"niceScroll()",
+			"nicescroll",
+			"nicescroll-rails",
+			"row mt",
+			"main-content",
+			"ui-sam.jpg",
+			"btn-theme",
+			"company-name-input",
+			"-input",
+			"company-name-input",
+			"!--",
+			"dash",
+			"                                                        ",
+			"        ",
+			"PERSONAL INFORMATIO",
+			"		",
+			"PERSONAL INFORMATION",
+			"col-lg-12",
+			"main-content",
+			"<span class=\"photo\"><img alt=\"avatar\" src=\"assets/img/ui-zac.jpg",
+			"assets",
+			"<! ",
+			"-->",
+			"<! ",
 			"assets/",
 			"bootstrap/",
 			"bootstrap",
@@ -852,64 +954,7 @@
 			"onSlideChange",
 			"active",
 			"setActiveClasses",
-			"activeOutloneThumbId",
-			"show",
-			"showo",
-			"addInitialActiveClasses",
-			"selectSlide",
-			"active",
-			"selectSlide",
-			"active",
-			"mousedown",
-			".mousedown",
-			"(\"mousedown\"",
-			"active",
-			"selectSlide",
-			"active",
-			"createNormalDocumentArea",
-			"templateli",
-			"createNormalDocumentArea",
-			"addClass(\"act",
-			"getActiveSlide",
-			"selectSlide",
-			"active",
-			"textarea",
-			"buildDocumentListeners",
-			"init:",
-			"innertext",
-			"text",
-			"Mustache.to_html",
-			"Mustache.to_html($('#template_smslist')",
-			"Mustache.to_html($('#template_smslist').",
-			"#pp-home-slides-item2",
-			"TableListeners",
-			"table",
-			"../img/submenus/insertTabDropdowns.png",
-			"#tables-1",
-			"pp-insert-tables-item1",
-			"tables-1",
-			"#tables-1",
-			"addTableListeners",
-			"tables-1",
-			"addTableListeners",
-			"insert-table-squares",
-			"listeners",
-			"clon",
-			"accordion-arrow",
-			"accordion-arrow-active",
-			"openPopups.png",
-			"createno",
-			"/*building functions*/",
-			"addItemListeners",
-			"setListeners",
-			"defineJQueryAccordio",
-			"slideTemplateListenersJson",
-			"setDynamicSlidesChangeListeners",
-			"fillSlidesDat",
-			"createNormalDocumentArea",
-			"setDynamicSlidesChangeListeners",
-			"shortDaysArray2",
-			"today"
+			"activeOutloneThumbId"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -927,65 +972,65 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 7,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/D/Dashio/Dashio - Dashboard/Theme/advanced_form_components.html",
+					"file": "app/models/Company.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 35303,
+						"buffer_size": 1458,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								33390,
-								33708
+								1384,
+								1397
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 10571.0,
+						"translation.y": 1170.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "app/views/pages/dashboards/company_owner_dashboard.blade.php",
+					"file": "app/controllers/RegistrationController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 362,
+						"buffer_size": 4500,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								353,
-								353
+								4412,
+								4412
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1890.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -994,75 +1039,217 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 966,
+						"buffer_size": 1554,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								832,
-								832
+								1198,
+								1198
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
-						"translation.x": -0.0,
-						"translation.y": 108.0,
+						"translation.x": 51.0,
+						"translation.y": 216.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "app/views/layouts/dashboard_master.blade.php",
+					"file": "app/controllers/ProfileUpdateController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1671,
+						"buffer_size": 2079,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								501,
-								501
-							],
+								1665,
+								1667
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 702.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/models/CompanyData.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 241,
+						"regions":
+						{
+						},
+						"selection":
+						[
 							[
-								598,
-								598
-							],
+								238,
+								238
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "public/js/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14009,
+						"regions":
+						{
+						},
+						"selection":
+						[
 							[
-								722,
-								722
-							],
+								13616,
+								13616
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 7758.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/controllers/DashboardController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2264,
+						"regions":
+						{
+						},
+						"selection":
+						[
 							[
-								844,
-								844
-							],
+								2186,
+								2186
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1006.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/views/dashboard_content/modals.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 389,
+						"regions":
+						{
+						},
+						"selection":
+						[
 							[
-								960,
-								960
-							],
+								279,
+								226
+							]
+						],
+						"settings":
+						{
+							"auto_name": "<div class=\"modal fade\" id=\"myModal\" tabindex=\"-1\"",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6,
+						"regions":
+						{
+						},
+						"selection":
+						[
 							[
-								1082,
-								1082
-							],
+								6,
+								6
+							]
+						],
+						"settings":
+						{
+							"auto_name": "html:5",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "app/views/dashboard_content/owner/profile.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 37744,
+						"regions":
+						{
+						},
+						"selection":
+						[
 							[
-								1203,
-								1203
-							],
-							[
-								1346,
-								1346
-							],
-							[
-								1415,
-								1415
+								37137,
+								37214
 							]
 						],
 						"settings":
@@ -1071,70 +1258,41 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
-						"translation.y": 162.0,
+						"translation.x": 225.0,
+						"translation.y": 7747.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "/D/Dashio/Dashio - Dashboard/Theme/advanced_table.html",
+					"buffer": 10,
+					"file": "app/views/sidebars/dashboard_home_owner.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 49659,
+						"buffer_size": 1864,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								516,
-								516
+								1562,
+								1562
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 216.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/views/js_footers/dashboards/dashboard_home.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1612,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1053,
-								1053
-							]
-						],
-						"settings":
-						{
-							"auto_name": "",
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": -0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
+					"stack_index": 10,
 					"type": "text"
 				}
 			]
@@ -1216,7 +1374,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 219.0,
+	"side_bar_width": 332.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

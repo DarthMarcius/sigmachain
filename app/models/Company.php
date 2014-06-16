@@ -80,4 +80,9 @@ class Company extends Eloquent implements UserInterface, RemindableInterface{
 		return $this->email;
 	}
 
+	public function companyData()
+    {
+        return $this->hasOne('CompanyData');
+    }
+
 }
