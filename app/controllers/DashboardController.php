@@ -139,6 +139,20 @@ class DashboardController extends BaseController {
 	    }
 	}
 
+	public function getSearch() {
+		if(Request::ajax()){
+			$companies = Company::all();
+			$data = array(
+					'companies' => $companies,
+				);
+			$html = View::make('dashboard_content.search', $data);
+			$result = array(
+					'html' => "$html",
+				);
+			return Response::json($result);
+		}
+	}
+
 	public function getLogoURL() {
 		if(Request::ajax()) {
 			$company_data = CompanyData::where('company_id', "=", Session::get('company_id'))->first();
@@ -163,7 +177,7 @@ class DashboardController extends BaseController {
 
 	public function getGpsData() {
 		if(Request::ajax()) {
-			$company_data = CompanyData::where('company_id', "=", Session::get('company_id'))->first();
+			$company_data = CompanyData::where('company_id', "=", Session::get('current_company_id'))->first();
 			$latitude = $company_data->latitude;
 			$longitude = $company_data->longitude;
 			$result = array(

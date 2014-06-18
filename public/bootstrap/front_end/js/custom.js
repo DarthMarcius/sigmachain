@@ -29,9 +29,9 @@
 	});
 
 // DM Menu
-	jQuery('#nav').affix({
+	/*jQuery('#nav').affix({
 		offset: { top: $('#nav').offset().top }
-	});
+	});*/
 
 // Menu
 	$(".panel a").click(function(e){

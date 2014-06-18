@@ -33,7 +33,7 @@
         <script src="assets/js/respond.min.js"></script>
     <![endif]-->
   
-    <script src="js/modernizr.js"></script>
+    <!--<script src="js/modernizr.js"></script>-->
   </head>
 @yield('content')
 </html>

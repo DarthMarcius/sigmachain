@@ -42,3 +42,10 @@
 
 #sidebar a:hover, .header a:hover {
   cursor: pointer; }
+
+.search-test-panel {
+  margin: 10px 0 0 0; }
+
+.search-test-panel tbody tr:hover {
+  cursor: pointer;
+  color: #428bca; }

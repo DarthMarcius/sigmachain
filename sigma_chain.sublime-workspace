@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"res",
+				"result"
+			],
+			[
+				"compa",
+				"company_id"
+			],
+			[
+				"co",
+				"console"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
 				"va",
 				"var_dump"
 			],
@@ -14,10 +34,6 @@
 			[
 				"le",
 				"length"
-			],
-			[
-				"re",
-				"return"
 			],
 			[
 				"fo",
@@ -38,14 +54,6 @@
 			[
 				"goo",
 				"GoogleMapsInit"
-			],
-			[
-				"compa",
-				"company"
-			],
-			[
-				"co",
-				"color"
 			],
 			[
 				"addClass",
@@ -250,10 +258,6 @@
 			[
 				"checkV",
 				"checkValidPassword"
-			],
-			[
-				"pass",
-				"password-confirm"
 			],
 			[
 				"has",
@@ -510,45 +514,82 @@
 			[
 				"defau",
 				"defaultDocumentSettings"
-			],
-			[
-				"sh",
-				"showPopup"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "app/routes.php",
+			"contents": "<?php\nuse Helpers as Helpers;\nclass DashboardController extends BaseController {\n\n	/*\n	|--------------------------------------------------------------------------\n	| Default Home Controller\n	|--------------------------------------------------------------------------\n	|\n	| You may wish to use controllers instead of, or in addition to, Closure\n	| based routes. That's great! Here is an example controller method to\n	| get you started. To route to this controller, just add the route:\n	|\n	|	Route::get('/', 'HomeController@showWelcome');\n	|\n	*/\n\n	// public function login() {\n	// 	$email = Input::get('email');\n	// 	$password = Input::get('password');\n	// 	$data = array('email' => $email, 'password' => $password);\n\n	// 	if (Auth::attempt(array('email' => $email, 'password' => $password,)))\n	// 	{\n	// 		$company = Company::where('email', '=', $email)->first();\n	// 		$id = $company->id;\n	// 		Session::put('company_id', $id);\n	// 		$result = array (\n	// 			\"result\" => true,\n	// 			\"id\" => $id\n	// 		);\n	// 		//return json_encode($result);\n //    		return Response::json($result);\n //    		//echo(\"yes\");\n	// 	}else {\n	// 		$result = array (\n	// 			\"result\" => false,\n	// 		);\n	// 		//return json_encode($result);\n //    		return Response::json($result);\n //    		//echo(\"no\");\n	// 	}\n\n	// }\n	public function logout() {\n		if(Request::ajax()) {\n			Auth::logout();\n			$result = array(\n				\"result\"=>\"ok\",\n			);\n			return Response::json($result);\n		}\n	}\n\n	public function displayDashboard($company_id) {\n		Session::put(\"current_company_id\", $company_id);\n		$session_company_id = Session::get(\"company_id\");\n\n		$companyModel = Company::findOrFail($company_id);\n\n		\n		\n		$companyData = $companyModel->companyData();\n		$companyData = $companyData->first();\n\n		$dataArray = array(\n			\"name\" => $companyModel->name,\n			\"description\" => $companyModel->description,\n			\"country\" => $companyModel->country,\n			\"address\" => $companyData->address,\n			\"phone\" => $companyData->phone,\n			\"skype\" => $companyData->skype,\n			\"logo\" => $companyData->logo_url,\n			\"email\" => $companyModel->email,\n			\"company_id\" => $session_company_id,\n\n			);\n		if($company_id == $session_company_id) {\n			return View::make('pages.dashboards.company_owner_dashboard', $dataArray);\n		}else {\n			return View::make('pages.dashboards.company_guest_dashboard', $dataArray);\n		}\n	}\n\n	public function getOwnerDashboard() {\n		$company_id = Session::get(\"company_id\");\n		$session_company_id = Session::get(\"current_company_id\");\n		$companyModel = Company::findOrFail($company_id);\n		$company = $companyModel->first();\n		$companyData = $companyModel->companyData();\n		$companyData = $companyData->first();\n		$dataArray = array(\n			\"name\" => $companyModel->name,\n			\"description\" => $companyModel->description,\n			\"country\" => $companyModel->country,\n			\"address\" => $companyData->address,\n			\"phone\" => $companyData->phone,\n			\"skype\" => $companyData->skype,\n			\"logo\" => $companyData->logo_url,\n			\"email\" => $companyModel->email,\n			\"company_id\" => $session_company_id,\n			);\n\n		if(Request::ajax()){\n			$html = View::make('dashboard_content.owner.dashboard', $dataArray);\n			$result = array(\n				\"latitude\" => \"\",\n				\"longitude\" => \"\",\n				'html' => \"$html\",\n			);\n			return Response::json($result);\n	    }\n	}\n\n	public function getOwnerProfile() {\n		$company_id = Session::get(\"company_id\");\n		$session_company_id = Session::get(\"current_company_id\");\n		$companyModel = Company::findOrFail($company_id);\n\n		$companyData = $companyModel->companyData();\n		$companyData = $companyData->first();\n		$dataArray = array(\n			\"name\" => $companyModel->name,\n			\"description\" => $companyModel->description,\n			\"country\" => $companyModel->country,\n			\"address\" => $companyData->address,\n			\"phone\" => $companyData->phone,\n			\"skype\" => $companyData->skype,\n			\"logo\" => $companyData->logo_url,\n			\"email\" => $companyModel->email,\n			\"company_id\" => $session_company_id,\n			);\n		if(Request::ajax()){\n			$html = View::make('dashboard_content.owner.profile', $dataArray);\n			$result = array(\n				'html' => \"$html\",\n			);\n			return Response::json($result);\n	    }\n	}\n\n	public function getSearch() {\n		\n	}\n\n	public function getLogoURL() {\n		if(Request::ajax()) {\n			$company_data = CompanyData::where('company_id', \"=\", Session::get('company_id'))->first();\n			$filename = $company_data->logo_url;\n			$result = array(\n				\"url\"=>\"$filename\",\n			);\n			return Response::json($result);\n		}\n	}\n\n	public function getCompanyName() {\n		if(Request::ajax()) {\n			$company_data = Company::where('id', \"=\", Session::get('company_id'))->first();\n			$name = $company_data->name;\n			$result = array(\n				\"name\"=>\"$name\",\n			);\n			return Response::json($result);\n		}\n	}\n\n	public function getGpsData() {\n		if(Request::ajax()) {\n			$company_data = CompanyData::where('company_id', \"=\", Session::get('current_company_id'))->first();\n			$latitude = $company_data->latitude;\n			$longitude = $company_data->longitude;\n			$result = array(\n				\"latitude\"=>\"$latitude\",\n				\"longitude\"=>\"$longitude\",\n			);\n			return Response::json($result);\n		}\n	}\n\n}\n",
+			"file": "app/controllers/DashboardController.php",
+			"file_size": 5210,
+			"file_write_time": 130475699549423278,
 			"settings":
 			{
-				"buffer_size": 1741,
+				"buffer_size": 5071,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "<?php\n\n/*\n|--------------------------------------------------------------------------\n| Application Routes\n|--------------------------------------------------------------------------\n|\n| Here is where you can register all of the routes for an application.\n| It's a breeze. Simply tell Laravel the URIs it should respond to\n| and give it the Closure to execute when that URI is requested.\n|\n*/\n\nRoute::get('/', function()\n{\n	//echo(App::environment());\n	return View::make('home');\n});\n//registration route\nRoute::post('/register', 'RegistrationController@preRegisterAndSentEmail');\nRoute::get('/register', 'RegistrationController@confirmRegistration');\n\nRoute::post(\"/login\", \"LoginController@login\");\n\nRoute::get(\"/company/{id}\", array('before' => 'auth', 'as' => 'company_id', 'uses' => 'DashboardController@displayDashboard'));\n\n/*ajax*/\nRoute::get(\"/company/owner/dashboard\", array('uses' => 'DashboardController@getOwnerDashboard'));\nRoute::get(\"/company/owner/profile\", array('uses' => 'DashboardController@getOwnerProfile'));\nRoute::get(\"/company/search\", array('uses' => 'DashboardController@getSearch'));\n\nRoute::get(\"/company/owner/logo-update-live\", array('uses' => 'DashboardController@getLogoURL'));\nRoute::get(\"/company/owner/name-update-live\", array('uses' => 'DashboardController@getCompanyName'));\nRoute::get(\"/company/owner/maps-update-live\", array('uses' => 'DashboardController@getGpsData'));\n\n// profile update\nRoute::post(\"/company/owner/profile_update/gps\", array('uses' => 'ProfileUpdateController@updateOfficeLocation'));\nRoute::post(\"/company/owner/profile_update/logo\", 'ProfileUpdateController@updateLogo');\n\nRoute::post(\"/company/owner/profile_update/info\", 'ProfileUpdateController@updateCompanyInfo');\nRoute::post(\"/company/owner/profile_update/contact-info\", 'ProfileUpdateController@updateCompanyContactInfo');\nRoute::post(\"/company/owner/profile_update/password\", 'ProfileUpdateController@updateCompanyPass');\nRoute::post(\"/company/owner/profile_update/email\", 'ProfileUpdateController@updateCompanyEmail');\n// profile update end\nRoute::post(\"/company/dashboard/logout\", 'DashboardController@logout');\n/*ajax end */\n/*Route::get(\"/company/{id}\", array('before' => 'auth', function($id)\n{\n	return View::make('pages.dashboards.company_owner_dashboard');\n	//var_dump(Session::get('company_id'));\n}));*/\n/*Route::post('/login', function()\n{\n	if(Request::ajax()) {\n		return \"hello\";\n	}\n\n});*/",
+			"file": "app/routes.php",
+			"file_size": 2419,
+			"file_write_time": 130475231068169376,
+			"settings":
+			{
+				"buffer_size": 2420,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/controllers/DashboardController.php",
+			"contents": ".te",
+			"file": "app/views/dashboard_content/search.blade.php",
+			"file_size": 0,
+			"file_write_time": 130475720537093704,
 			"settings":
 			{
-				"buffer_size": 2548,
+				"buffer_size": 3,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/views/js_footers/dashboards/dashboard_home.blade.php",
+			"file": "app/views/dashboard_content/owner/dashboard.blade.php",
 			"settings":
 			{
-				"buffer_size": 2692,
+				"buffer_size": 2289,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/views/dashboard_content/owner/profile.blade.php",
+			"file": "app/views/home.blade.php",
 			"settings":
 			{
-				"buffer_size": 38763,
+				"buffer_size": 32787,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/views/layouts/home_master.blade.php",
+			"settings":
+			{
+				"buffer_size": 1470,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "public/bootstrap/front_end/js/custom.js",
+			"settings":
+			{
+				"buffer_size": 2557,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/Company.php",
+			"settings":
+			{
+				"buffer_size": 1458,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -620,40 +661,42 @@
 	},
 	"file_history":
 	[
+		"/C/wamp/www/sigmachain_repo/app/controllers/RegistrationController.php",
+		"/C/wamp/www/sigmachain_repo/app/views/dashboard_content/modals.blade.php",
 		"/C/wamp/www/sigmachain_repo/public/css/custom.scss",
-		"/D/Dashio/Dashio - Dashboard/Theme/file_upload.html",
+		"/C/wamp/www/sigmachain_repo/app/views/headers/dashboard_home.blade.php",
+		"/C/wamp/www/sigmachain_repo/app/views/sidebars/dashboard_home_guest.blade.php",
+		"/C/wamp/www/sigmachain_repo/app/views/pages/dashboards/company_guest_dashboard.blade.php",
+		"/C/wamp/www/sigmachain_repo/app/views/pages/dashboards/company_owner_dashboard.blade.php",
+		"/C/wamp/www/sigmachain_repo/app/views/dashboard_content/guest/dashboard.blade.php",
+		"/C/wamp/www/sigmachain_repo/app/views/dashboard_content/owner/dashboard.blade.php",
+		"/C/wamp/www/sigmachain_repo/app/views/dashboard_content/owner/profile.blade.php",
+		"/C/wamp/www/sigmachain_repo/public/js/main.js",
+		"/C/wamp/www/sigmachain_repo/app/controllers/LoginController.php",
+		"/C/wamp/www/sigmachain_repo/app/routes.php",
+		"/C/wamp/www/sigmachain_repo/app/views/home.blade.php",
+		"/C/wamp/www/sigmachain_repo/app/models/Company.php",
+		"/C/wamp/www/sigmachain_repo/public/css/custom.css",
 		"/C/wamp/www/sigmachain_repo/app/views/sidebars/dashboard_home_owner.blade.php",
 		"/C/wamp/www/sigmachain_repo/app/controllers/ProfileUpdateController.php",
-		"/C/wamp/www/sigmachain_repo/public/js/main.js",
-		"/C/wamp/www/sigmachain_repo/app/views/dashboard_content/modals.blade.php",
-		"/C/wamp/www/sigmachain_repo/app/views/pages/dashboards/company_owner_dashboard.blade.php",
-		"/C/wamp/www/sigmachain_repo/app/models/Company.php",
-		"/C/wamp/www/sigmachain_repo/app/controllers/RegistrationController.php",
+		"/C/wamp/www/sigmachain_repo/app/views/js_footers/dashboards/dashboard_home.blade.php",
+		"/D/Dashio/Dashio - Dashboard/Theme/file_upload.html",
 		"/C/wamp/www/sigmachain_repo/app/models/CompanyData.php",
 		"/C/wamp/www/sigmachain_repo/app/controllers/DashboardController.php",
 		"/C/wamp/www/sigmachain_repo/public/bootstrap/assets/js/bootstrap-fileupload/bootstrap-fileupload.js",
 		"/C/wamp/www/sigmachain_repo/app/database/migrations/2014_06_09_170613_create_company_data_table.php",
-		"/C/wamp/www/sigmachain_repo/app/views/js_footers/dashboards/dashboard_home.blade.php",
-		"/C/wamp/www/sigmachain_repo/app/views/pages/dashboards/company_guest_dashboard.blade.php",
-		"/C/wamp/www/sigmachain_repo/app/controllers/LoginController.php",
 		"/C/wamp/www/sigmachain_repo/app/filters.php",
 		"/C/wamp/www/sigmachain_repo/public/js/dashboard.js",
-		"/C/wamp/www/sigmachain_repo/app/views/dashboard_content/owner/dashboard.blade.php",
 		"/D/Dashio/Dashio - Dashboard/Theme/profile.html",
-		"/C/wamp/www/sigmachain_repo/app/views/dashboard_content/owner/profile.blade.php",
-		"/C/wamp/www/sigmachain_repo/app/views/sidebars/dashboard_home_guest.blade.php",
-		"/C/wamp/www/sigmachain_repo/app/routes.php",
 		"/C/wamp/www/sigmachain_repo/app/database/migrations/2014_05_17_090217_create_companies_table.php",
 		"/C/wamp/www/sigmachain_repo/app/views/layouts/dashboard_master.blade.php",
 		"/C/wamp/www/sigmachain_repo/public/bootstrap/assets/js/common-scripts.js",
-		"/C/wamp/www/sigmachain_repo/app/views/home.blade.php",
 		"/C/wamp/www/sigmachain_repo/app/views/test.blade.php",
 		"/C/wamp/www/sigmachain_repo/public/bootstrap/assets/css/style.css",
 		"/C/wamp/www/sigmachain_repo/app/views/pages/registration_confirm.blade.php",
 		"/D/dashtest/Dashio/Dashio - Dashboard/Theme/profile.html",
 		"/C/wamp/www/sigmachain_repo/app/views/js_footers/dashboards/4c503fd0-9e9e-481c-b78a-69b32377c158.dmp",
 		"/D/Dashio/Dashio - Dashboard/Theme/advanced_table.html",
-		"/C/wamp/www/sigmachain_repo/app/views/headers/dashboard_home.blade.php",
 		"/C/wamp/www/sigmachain_repo/app/views/footers/dashboard.blade.php",
 		"/D/Dashio/Dashio - Dashboard/Theme/assets/js/jquery.nicescroll.js",
 		"/D/Dashio/Dashio - Dashboard/Theme/advanced_form_components.html",
@@ -745,9 +788,7 @@
 		"/C/Users/Marcius/Desktop/test1/index.html",
 		"/C/wamp/www/sigmachain_repo/app/views/js_footers/registration.blade.php",
 		"/C/wamp/www/sigmachain_repo/app/config/remote.php",
-		"/C/Users/Marcius/Desktop/index.php",
-		"/C/wamp/www/sigmachain_repo/app/config/server/app.php",
-		"/C/Users/Marcius/AppData/Local/Temp/fz3temp-1/index.php"
+		"/C/Users/Marcius/Desktop/index.php"
 	],
 	"find":
 	{
@@ -766,6 +807,25 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"te",
+			"row",
+			"table",
+			"getSearch",
+			"GoogleMapsInit",
+			"updateOfficeLocation",
+			"map",
+			"maps",
+			"googlema",
+			"$company",
+			".",
+			"Hash",
+			"\"result\" => \"res\",",
+			"$filename",
+			"#company-info-form",
+			"company-info-form",
+			"profile-update-modal",
+			"gps-confirm-modal",
+			"#gps-confirm-modal",
 			"main-registration-form",
 			"blur",
 			"CompanyNameIsCorrect",
@@ -874,26 +934,7 @@
 			"assets/",
 			"<script",
 			"script",
-			"assets/",
-			"ctrl+m",
-			"setActiveSlide",
-			"slide",
-			"that",
-			"textSelectionStarted",
-			"fillQuestionData",
-			"console.log",
-			"positionPopupToCoordinates",
-			".final-action",
-			"#outline-thumb-rmb-clipboard",
-			"#blink-line-rmb",
-			"positionRmbOutlineThumbPopupToCoordinates",
-			"positionPopupToCoordinates",
-			"#context-slide-rmb",
-			"ev.which == 3",
-			"rmb",
-			"blink-line-wrapper",
-			"setActiveSlide",
-			"updateview"
+			"assets/"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -911,52 +952,24 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/routes.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1741,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1156,
-								1125
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 268.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "app/controllers/DashboardController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2548,
+						"buffer_size": 5071,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2494,
-								2494
+								4145,
+								4145
 							]
 						],
 						"settings":
@@ -965,27 +978,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1116.0,
+						"translation.y": 1998.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "app/views/js_footers/dashboards/dashboard_home.blade.php",
+					"buffer": 1,
+					"file": "app/routes.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2692,
+						"buffer_size": 2420,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1260,
-								1260
+								1099,
+								1108
 							]
 						],
 						"settings":
@@ -993,27 +1006,56 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 270.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "app/views/dashboard_content/owner/profile.blade.php",
+					"buffer": 2,
+					"file": "app/views/dashboard_content/search.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 38763,
+						"buffer_size": 3,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3637,
-								3637
+								3,
+								3
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/views/dashboard_content/owner/dashboard.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2289,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1022,11 +1064,129 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 135.0,
-						"translation.y": 601.0,
+						"translation.x": -0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/views/home.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 32787,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/views/layouts/home_master.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1470,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								523,
+								523
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 162.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "public/bootstrap/front_end/js/custom.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2557,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								643,
+								643
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/models/Company.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1458,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1397,
+								1397
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 972.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
 					"type": "text"
 				}
 			]
@@ -1108,7 +1268,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 332.0,
+	"side_bar_width": 271.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

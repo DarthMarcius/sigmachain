@@ -27,7 +27,8 @@ Route::get("/company/{id}", array('before' => 'auth', 'as' => 'company_id', 'use
 /*ajax*/
 Route::get("/company/owner/dashboard", array('uses' => 'DashboardController@getOwnerDashboard'));
 Route::get("/company/owner/profile", array('uses' => 'DashboardController@getOwnerProfile'));
-Route::get("/company/search", array('uses' => 'DashboardController@getSearch'));
+Route::get("/company/search/companies", array('uses' => 'DashboardController@getSearch'));
+
 Route::get("/company/owner/logo-update-live", array('uses' => 'DashboardController@getLogoURL'));
 Route::get("/company/owner/name-update-live", array('uses' => 'DashboardController@getCompanyName'));
 Route::get("/company/owner/maps-update-live", array('uses' => 'DashboardController@getGpsData'));

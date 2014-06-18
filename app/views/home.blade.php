@@ -354,11 +354,11 @@
                         <form action="/login" method="POST" role="form" id="login-form">
                             <div class="form-group">
                                 <label for="login-email">Email address</label>
-                                <input type="email" name="login-email" class="form-control" id="login-email" placeholder="Enter email" value="asmodianis@gmail.com">
+                                <input type="email" name="login-email" class="form-control" id="login-email" placeholder="Enter email">
                             </div>
                             <div class="form-group">
                                 <label for="login-password">Password</label>
-                                <input type="password" name="login-password" class="form-control" id="login-password" placeholder="Password" value="111111">
+                                <input type="password" name="login-password" class="form-control" id="login-password" placeholder="Password">
                             </div>
                             <div class="form-group">
                                <input type="submit" id="login-submit" class="btn btn-block button large" value="Login">

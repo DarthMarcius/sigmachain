@@ -1033,13 +1033,34 @@ Sigma.prototype = {
 				dataType: "json",
 				success: function(data) {
 					//console.log(data.result)
-					if(data.result == "ok") {console.log("in")
+					if(data.result == "ok") {
 						window.location.href = "/";
 					}
 				}
 			})	
 		});
 		// LOGOUT END
+
+		// SEARCH
+		$("body").on("click", ".search-for-companies-thumb", function() {
+			$.ajax({
+				url: "/company/search/companies",
+				type : "GET",
+				dataType: "json",
+				success: function(data) {//console.log(data.html)
+					$(".wrapper").html(data.html);
+				}
+			});
+		});
+
+		$("body").on("click", ".search-test-panel tbody tr", function(ev) {
+			var companyThumb = $(ev.target).closest("tr"),
+				redirectLink = companyThumb.attr("data-link");
+			console.log(redirectLink)
+			window.location.href = redirectLink;
+
+		});
+		// SEARCH END
     	// update default company data end
     	/*owner end*/
 	}
