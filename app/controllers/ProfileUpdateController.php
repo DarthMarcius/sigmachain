@@ -75,11 +75,12 @@ class ProfileUpdateController extends BaseController {
 			}
 
 			$extension = File::extension($_FILES['photo']['name']);
-			$directory = public_path() . DIRECTORY_SEPARATOR ."img".DIRECTORY_SEPARATOR."logos".DIRECTORY_SEPARATOR;
+			$directory = base_path() .DIRECTORY_SEPARATOR. $_ENV['public_folder_name'] . DIRECTORY_SEPARATOR ."img".DIRECTORY_SEPARATOR."logos".DIRECTORY_SEPARATOR;
 			$filename = sha1(Auth::user()->id).".{$extension}";
 			$upload_success = Input::file('photo')->move($directory, $filename);
 
-			$company_data = CompanyData::where('company_id', "=", Session::get('company_id'))->first();
+			$company_data = CompanyData::where('company_id', "=", Session::get('company_id'));
+			$company_data = $company_data->first();
 			$company_data->logo_url = $filename;
 			$company_data->save();
 
