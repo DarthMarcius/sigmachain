@@ -42,21 +42,67 @@ class DashboardController extends BaseController {
 	// 	}
 
 	// }
+	public function logout() {
+		if(Request::ajax()) {
+			Auth::logout();
+			$result = array(
+				"result"=>"ok",
+			);
+			return Response::json($result);
+		}
+	}
+
 	public function displayDashboard($company_id) {
-		$session_company_id = Session::get("company_id");
-		$companyModel = Company::findOrFail($company_id);
 		Session::put("current_company_id", $company_id);
+		$session_company_id = Session::get("company_id");
+
+		$companyModel = Company::findOrFail($company_id);
+
+		
+		
+		$companyData = $companyModel->companyData();
+		$companyData = $companyData->first();
+
+		$dataArray = array(
+			"name" => $companyModel->name,
+			"description" => $companyModel->description,
+			"country" => $companyModel->country,
+			"address" => $companyData->address,
+			"phone" => $companyData->phone,
+			"skype" => $companyData->skype,
+			"logo" => $companyData->logo_url,
+			"email" => $companyModel->email,
+			"company_id" => $session_company_id,
+
+			);
 		if($company_id == $session_company_id) {
-			return View::make('pages.dashboards.company_owner_dashboard');
+			return View::make('pages.dashboards.company_owner_dashboard', $dataArray);
 		}else {
-			return View::make('pages.dashboards.company_guest_dashboard');
+			return View::make('pages.dashboards.company_guest_dashboard', $dataArray);
 		}
 	}
 
 	public function getOwnerDashboard() {
-		//$companyModel = Company::find($company_id);
+		$company_id = Session::get("company_id");
+		$session_company_id = Session::get("current_company_id");
+		$companyModel = Company::findOrFail($company_id);
+		$company = $companyModel->first();
+		$companyData = $companyModel->companyData();
+		$companyData = $companyData->first();
+		$dataArray = array(
+			"name" => $companyModel->name,
+			"description" => $companyModel->description,
+			"country" => $companyModel->country,
+			"address" => $companyData->address,
+			"phone" => $companyData->phone,
+			"skype" => $companyData->skype,
+			"logo" => $companyData->logo_url,
+			"email" => $companyModel->email,
+			"company_id" => $session_company_id,
+			);
+
 		if(Request::ajax()){
-			$html = View::make('dashboard_content.owner.dashboard');
+			$html = View::make('dashboard_content.owner.dashboard', $dataArray);
 			$result = array(
 				"latitude" => "",
 				"longitude" => "",
@@ -67,9 +113,25 @@ class DashboardController extends BaseController {
 	}
 
 	public function getOwnerProfile() {
-		//$companyModel = Company::find($company_id);
+		$company_id = Session::get("company_id");
+		$session_company_id = Session::get("current_company_id");
+		$companyModel = Company::findOrFail($company_id);
+
+		$companyData = $companyModel->companyData();
+		$companyData = $companyData->first();
+		$dataArray = array(
+			"name" => $companyModel->name,
+			"description" => $companyModel->description,
+			"country" => $companyModel->country,
+			"address" => $companyData->address,
+			"phone" => $companyData->phone,
+			"skype" => $companyData->skype,
+			"logo" => $companyData->logo_url,
+			"email" => $companyModel->email,
+			"company_id" => $session_company_id,
+			);
 		if(Request::ajax()){
-			$html = View::make('dashboard_content.owner.profile');
+			$html = View::make('dashboard_content.owner.profile', $dataArray);
 			$result = array(
 				'html' => "$html",
 			);
@@ -83,6 +145,30 @@ class DashboardController extends BaseController {
 			$filename = $company_data->logo_url;
 			$result = array(
 				"url"=>"$filename",
+			);
+			return Response::json($result);
+		}
+	}
+
+	public function getCompanyName() {
+		if(Request::ajax()) {
+			$company_data = Company::where('id', "=", Session::get('company_id'))->first();
+			$name = $company_data->name;
+			$result = array(
+				"name"=>"$name",
+			);
+			return Response::json($result);
+		}
+	}
+
+	public function getGpsData() {
+		if(Request::ajax()) {
+			$company_data = CompanyData::where('company_id', "=", Session::get('company_id'))->first();
+			$latitude = $company_data->latitude;
+			$longitude = $company_data->longitude;
+			$result = array(
+				"latitude"=>"$latitude",
+				"longitude"=>"$longitude",
 			);
 			return Response::json($result);
 		}

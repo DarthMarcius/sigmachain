@@ -29,11 +29,19 @@ Route::get("/company/owner/dashboard", array('uses' => 'DashboardController@getO
 Route::get("/company/owner/profile", array('uses' => 'DashboardController@getOwnerProfile'));
 Route::get("/company/search", array('uses' => 'DashboardController@getSearch'));
 Route::get("/company/owner/logo-update-live", array('uses' => 'DashboardController@getLogoURL'));
+Route::get("/company/owner/name-update-live", array('uses' => 'DashboardController@getCompanyName'));
+Route::get("/company/owner/maps-update-live", array('uses' => 'DashboardController@getGpsData'));
 
 // profile update
 Route::post("/company/owner/profile_update/gps", array('uses' => 'ProfileUpdateController@updateOfficeLocation'));
 Route::post("/company/owner/profile_update/logo", 'ProfileUpdateController@updateLogo');
+
+Route::post("/company/owner/profile_update/info", 'ProfileUpdateController@updateCompanyInfo');
+Route::post("/company/owner/profile_update/contact-info", 'ProfileUpdateController@updateCompanyContactInfo');
+Route::post("/company/owner/profile_update/password", 'ProfileUpdateController@updateCompanyPass');
+Route::post("/company/owner/profile_update/email", 'ProfileUpdateController@updateCompanyEmail');
 // profile update end
+Route::post("/company/dashboard/logout", 'DashboardController@logout');
 /*ajax end */
 /*Route::get("/company/{id}", array('before' => 'auth', function($id)
 {

@@ -72,6 +72,10 @@ class RegistrationController extends BaseController {
 		$company_id = $company->id;
 		$companyData = new CompanyData;
 		$companyData->company_id = $company_id;
+		$companyData->logo_url = "default.jpg";
+		$companyData->address = "can be updated from the company settings";
+		$companyData->skype = "can be updated from the company settings";
+		$companyData->phone = "can be updated from the company settings";
 		$companyData->save();
 
 		return $result;

@@ -3,11 +3,10 @@
 <body>
 	<section id="container">
 	    @include('headers.dashboard_home')
-	    @include('sidebars.dashboard_home_owner')
+	    @include('sidebars.dashboard_home_guest')
 	    <section id="main-content">
 	        <section class="wrapper site-min-height">
-	        	@include('dashboard_content.owner.dashboard')
-	            {{--@include('dashboard_content.owner.profile')--}}
+	        	@include('dashboard_content.guest.dashboard')
 	        </section>
 	    </section>
 	    @include('footers.dashboard')

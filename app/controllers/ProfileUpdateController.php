@@ -84,7 +84,7 @@ class ProfileUpdateController extends BaseController {
 			$company_data->save();
 
 			$result = array (
-				"result" => "res",
+				"result" => "$res",
 			);
 			return Response::json($result);
 		}
@@ -92,33 +92,72 @@ class ProfileUpdateController extends BaseController {
 
 	public function updateCompanyInfo() {
 		if(Request::ajax()){
-			/*$company_data = Company::where('id', "=", Session::get('company_id'))->first();
-			$company_data->logo_url = $filename;
-			$company_data->save();*/
+			$input = Input::all();
+			$res = "ok";
+			$company_data = Company::where('id', "=", Session::get('company_id'))->first();
+			$company_data->name = $input["name"];
+			$company_data->country = $input["country"];
+			$company_data->description = $input["description"];
+			$company_data->save();
+			
+			$result = array (
+				"result" => "$res",
+			);
+			return Response::json($result);
 		}
 	}
 
-	public function updateContactInfo() {
+	public function updateCompanyContactInfo() {
 		if(Request::ajax()){
-			/*$company_data = CompanyData::where('company_id', "=", Session::get('company_id'))->first();
-			$company_data->logo_url = $filename;
-			$company_data->save();*/
+			$input = Input::all();
+			$res = "ok";
+			$company_data = CompanyData::where('company_id', "=", Session::get('company_id'))->first();
+			$company_data->address = $input["address"];
+			$company_data->phone = $input["phone"];
+			$company_data->skype = $input["skype"];
+			$company_data->save();
+			$result = array (
+				"result" => "$res",
+			);
+			return Response::json($result);
 		}
 	}
 
-	public function updatePassword() {
+	public function updateCompanyPass() {
 		if(Request::ajax()){
-			/*$company_data = Company::where('id', "=", Session::get('company_id'))->first();
-			$company_data->logo_url = $filename;
-			$company_data->save();*/
+			$input = Input::all();
+			$res = "ok";
+			$company_data = Company::where('id', "=", Session::get('company_id'))->first();
+
+			if(!Hash::check($input["oldPassword"], $company_data->password)) {
+				$res = "wrong old password";
+				$result = array (
+				"result" => "$res",
+				);
+				return Response::json($result);
+			}
+
+			$company_data->password = Hash::make($input["password"]);
+			$company_data->save();
+
+			$result = array (
+				"result" => "$res",
+			);
+			return Response::json($result);
 		}
 	}
 
-	public function updateEmail() {
+	public function updateCompanyEmail() {
 		if(Request::ajax()){
-			/*$company_data = Company::where('id', "=", Session::get('company_id'))->first();
-			$company_data->logo_url = $filename;
-			$company_data->save();*/
+			$input = Input::all();
+			$res = "ok";
+			$company_data = Company::where('id', "=", Session::get('company_id'))->first();
+			$company_data->email = $input["email"];
+			$company_data->save();
+			$result = array (
+				"result" => "$res",
+			);
+			return Response::json($result);
 		}
 	}
 

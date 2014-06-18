@@ -7,8 +7,8 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu owner-sidebar" id="nav-accordion">
               
-              	  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-              	  <h5 class="centered">Sam Soffes</h5>
+              	  <p class="centered"><a href="profile.html"><img src="../img/logos/{{$logo}}" class="img-circle" width="80"></a></p>
+              	  <h5 class="centered">{{$name}}</h5>
               	  	
                   <li class="mt dashboard-thumb">
                       <a class = "active">

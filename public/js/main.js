@@ -86,7 +86,7 @@ window[nameSpaceName] = {
 		}
 	},
 	GoogleMapsInit: function(coordinate1, coordinate2) {
-		var myLatlng = new google.maps.LatLng(12.00, 15.00);
+		var myLatlng = new google.maps.LatLng(coordinate1, coordinate2);
 	    var mapOptions = {
 	        zoom: 11,
 	        scrollwheel: false,
@@ -390,8 +390,17 @@ Sigma.prototype = {
 
 	dashboardListeners : function() {
 		$(window).load(function(){
-	        sigma.GoogleMapsInit();
+	        $.ajax({
+				url: "/company/owner/maps-update-live",
+				type : "GET",
+				dataType: "json",
+				success: function(data) {
+					sigma.GoogleMapsInit(data.latitude, data.longitude);
+				}
+			})
     	});
+
+
 		// formValidationListeners
 		$(".wrapper").on("focus", "#company-latitude", function(ev) {
 			$("#gps-form *").tooltip("destroy");
@@ -445,7 +454,14 @@ Sigma.prototype = {
 					//console.log(data.html)
 					$("#main-content .wrapper").html("");
 					$("#main-content .wrapper").append($(data.html));
-					sigma.GoogleMapsInit();
+					$.ajax({
+						url: "/company/owner/maps-update-live",
+						type : "GET",
+						dataType: "json",
+						success: function(data) {
+							sigma.GoogleMapsInit(data.latitude, data.longitude);
+						}
+					})
 				}
 			})
     	});
@@ -480,12 +496,11 @@ Sigma.prototype = {
 						success: function(data) {
 							//console.log(data.result)
 							if(data.result == "ok") {
-								$('#gps-confirm-modal').modal({
+								$('#profile-update-modal').find("p").html("You successfully updated your office location.");
+								$('#profile-update-modal').modal({
 									keyboard: true
 								});
 							}
-							/*$("#main-content .wrapper").html("");
-							$("#main-content .wrapper").append($(data.html));*/
 						}
 					})	
 				}
@@ -607,6 +622,48 @@ Sigma.prototype = {
 			}
 			
 		});
+
+		$(".wrapper").on("submit", "#company-info-form", function(ev) {
+			//console.log($("#company-description").val())
+			if($("#company-info-form .form-group.has-error").length == 0) {
+    			if($("#company-name-input").val() == "" && $("#company-description").val() == "") {
+    				$("#company-name-input").focus();
+    			} else {//ok
+		    		$.ajax({
+						url: "/company/owner/profile_update/info",
+						type : "POST",
+						data: {
+							'name' : $("#company-name-input").val(),
+							'country' : $("#country-name-input").val(),
+							'description' : $("#company-description").val()
+						},
+						dataType: "json",
+						success: function(data) {
+							if(data.result == "ok") {
+								$('#profile-update-modal p').html("You updated your company info successfuly");
+								$.ajax({
+									url: "/company/owner/name-update-live",
+									type : "GET",
+									dataType: "json",
+									success: function(data) {
+										var name = data.name;
+										$("#nav-accordion h5").html(name);
+									}
+								})	
+								$('#profile-update-modal').modal({
+									keyboard: true
+								});
+								$('#profile-update-modal').modal("show");
+							}
+						}
+					})	
+				}
+    		}else {
+    			$($("#company-info-form .form-group.has-error")[0]).find("input").focus();
+    		}
+			ev = $.event.fix(ev);
+	    	ev.preventDefault();
+		});
 		// COMPANY INFORMATION END
 		// CONTACT INFORMATION
 		$(".wrapper").on("blur", "#company-address1", function(ev) {
@@ -667,6 +724,39 @@ Sigma.prototype = {
 					$(ev.target).tooltip("show");
 				}
 			}
+		});
+
+		$(".wrapper").on("submit", "#contact-info-form", function(ev) {
+			if($("#contact-info-form .form-group.has-error").length == 0) {
+    			if($("#company-address1").val() == "" && $("#company-phone").val() == "" && $("#company-skype").val() == "") {
+    				$("#company-address1").focus();
+    			} else {//ok
+		    		$.ajax({
+						url: "/company/owner/profile_update/contact-info",
+						type : "POST",
+						data: {
+							'address' : $("#company-address1").val(),
+							'phone' : $("#company-phone").val(),
+							'skype' : $("#company-skype").val()
+						},
+						dataType: "json",
+						success: function(data) {
+							//console.log(data.result)
+							if(data.result == "ok") {
+								$('#profile-update-modal p').html("You updated your company contact info successfuly");
+								$('#profile-update-modal').modal({
+									keyboard: true
+								});
+								$('#profile-update-modal').modal("show");
+							}
+						}
+					})	
+				}
+    		}else {
+    			$($("#contact-info-form .form-group.has-error")[0]).find("input").focus();
+    		}
+			ev = $.event.fix(ev);
+	    	ev.preventDefault();
 		});
 		// CONTACT INFORMATION END
 		// CHANGE PASSWORD
@@ -778,6 +868,46 @@ Sigma.prototype = {
 				}
 			}
 		});
+
+		$(".wrapper").on("submit", "#change-password-form", function(ev) {
+			if($("#change-password-form .form-group.has-error").length == 0) {
+    			if($("#old-password").val() == "" && $("#password").val() == "" && $("#password-confirm").val() == "") {
+    				$("#old-password").focus();
+    			} else {//ok
+		    		$.ajax({
+						url: "/company/owner/profile_update/password",
+						type : "POST",
+						data: {
+							'oldPassword' : $("#old-password").val(),
+							'password' : $("#password").val(),
+							'confirmPassword' : $("#password-confirm").val()
+						},
+						dataType: "json",
+						success: function(data) {
+							console.log(data)
+							if(data.result == "ok") {
+								$('#profile-update-modal p').html("You have updated your company password successfuly");
+								$('#profile-update-modal').modal({
+									keyboard: true
+								});
+								$('#profile-update-modal').modal("show");
+							}
+							if(data.result == "wrong old password") {
+								$('#profile-update-modal p').html("Old password you entered is not right, please try again.");
+								$('#profile-update-modal').modal({
+									keyboard: true
+								});
+								$('#profile-update-modal').modal("show");
+							}
+						}
+					})	
+				}
+    		}else {
+    			$($("#change-password-form .form-group.has-error")[0]).find("input").focus();
+    		}
+			ev = $.event.fix(ev);
+	    	ev.preventDefault();
+		});
 		// CHANGE PASSWORD END
 		// CHANGE EMAIL
 		$(".wrapper").on("blur", "#company-email", function(ev) {
@@ -863,7 +993,53 @@ Sigma.prototype = {
 				}
 			}
 		});
+		$(".wrapper").on("submit", "#change-email-form", function(ev) {
+			if($("#change-email-form .form-group.has-error").length == 0) {
+    			if($("#company-email").val() == "" && $("#company-email-confirm").val() == "") {
+    				$("#company-email").focus();
+    			} else {//ok
+		    		$.ajax({
+						url: "/company/owner/profile_update/email",
+						type : "POST",
+						data: {
+							'email' : $("#company-email").val(),
+							'emailConfirm' : $("#company-email-confirm").val()
+						},
+						dataType: "json",
+						success: function(data) {
+							//console.log(data.result)
+							if(data.result == "ok") {
+								$('#profile-update-modal p').html("You have updated your company email successfuly");
+								$('#profile-update-modal').modal({
+									keyboard: true
+								});
+								$('#profile-update-modal').modal("show");
+							}
+						}
+					})	
+				}
+    		}else {
+    			$($("#change-email-form .form-group.has-error")[0]).find("input").focus();
+    		}
+			ev = $.event.fix(ev);
+	    	ev.preventDefault();
+		});
 		// CHANGE EMAIL END
+		// LOGOUT
+		$(".logout").click(function() {
+			$.ajax({
+				url: "/company/dashboard/logout",
+				type : "POST",
+				dataType: "json",
+				success: function(data) {
+					//console.log(data.result)
+					if(data.result == "ok") {console.log("in")
+						window.location.href = "/";
+					}
+				}
+			})	
+		});
+		// LOGOUT END
     	// update default company data end
     	/*owner end*/
 	}

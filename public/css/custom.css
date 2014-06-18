@@ -40,5 +40,5 @@
 #edit form {
   margin-bottom: 35px; }
 
-#sidebar a:hover {
+#sidebar a:hover, .header a:hover {
   cursor: pointer; }
