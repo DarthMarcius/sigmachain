@@ -19,6 +19,81 @@ class LoginController extends BaseController {
 		$email = Input::get('email');
 		$password = Input::get('password');
 		$data = array('email' => $email, 'password' => $password);
+		/*
+		Client Admin Auth Switch
+		*/
+			 Config::set('auth.model', 'Company');
+			 Config::set('auth.table', 'companies');
+		/*
+		Client Admin Auth Switch end
+		*/
+		if (Auth::attempt(array('email' => $email, 'password' => $password,)))
+		{
+			$company = Company::where('email', '=', $email)->first();
+			$id = $company->id;
+			Session::put('company_id', $id);
+			$result = array (
+				"result" => true,
+				"id" => $id
+			);
+			//return json_encode($result);
+    		return Response::json($result);
+    		//echo("yes");
+		}else {
+			$result = array (
+				"result" => false,
+			);
+			//return json_encode($result);
+    		return Response::json($result);
+    		//echo("no");
+		}
+
+	}
+
+	public function adminLoginStep1() {
+		$name = Input::get('name');
+		$password = Input::get('password');
+		$data = array('name' => $name, 'password' => $password);
+
+		//Client Admin Auth Switch
+			 Config::set('auth.model', 'Admin');
+			 Config::set('auth.table', 'admins');
+		//Client Admin Auth Switch end
+
+		if (Auth::validate(array('name' => $name, 'password' => $password,)))
+		{
+			$admin = Admin::where('name', '=', $name)->first();
+			$email = $admin->email;
+			$secret_enter_key = Hash::make($admin->password.rand(0, 1000));
+			$admin->secret_enter_key = $secret_enter_key;
+			$admin->save();
+			//$this->sentEmail();
+			$result = array (
+				"result" => true
+			);
+    		return Response::json($result);
+		}else {
+			$result = array (
+				"result" => false,
+			);
+    		return Response::json($result);
+		}
+
+	}
+
+	public function adminLoginStep2() {
+		$email = Input::get('email');
+		$password = Input::get('password');
+		$data = array('email' => $email, 'password' => $password);
+
+		/*
+		Client Admin Auth Switch
+		*/
+			 Config::set('auth.model', 'Admin');
+			 Config::set('auth.table', 'admins');
+		/*
+		Client Admin Auth Switch end
+		*/
 
 		if (Auth::attempt(array('email' => $email, 'password' => $password,)))
 		{
@@ -41,6 +116,21 @@ class LoginController extends BaseController {
     		//echo("no");
 		}
 
+	}
+
+	public function sentEmail($name, $email, $secret_enter_key) {
+		$data = array (
+			"secret_enter_key" => $secret_enter_key,
+			"host" => $_ENV['host_name'],
+		);
+		$email_data = array (
+			"name" => $name,
+			"email" => $email,
+		);
+		Mail::send('emails.register.register', $data, function($message) use($email_data)
+		{
+    		$message->to($email_data["email"], $email_data["name"])->subject('Confirm your registration on sigmachain.com');
+		});
 	}
 
 }

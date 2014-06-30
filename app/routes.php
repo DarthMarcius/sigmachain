@@ -44,6 +44,16 @@ Route::post("/company/owner/profile_update/email", 'ProfileUpdateController@upda
 // profile update end
 Route::post("/company/dashboard/logout", 'DashboardController@logout');
 /*ajax end */
+
+// admin page
+Route::get("/admin", array('before' => 'auth_admin', 'uses' => 'AdminController@showAdminPage'));
+Route::get("/admin/login", array('uses' => 'AdminController@showAdminLoginPage'));
+
+// admin page ajax
+Route::post("/admin/login/step1", "LoginController@adminLoginStep1");
+Route::post("/admin/login/step2", "LoginController@adminLoginStep2");
+// admin page ajax end
+// admin page end
 /*Route::get("/company/{id}", array('before' => 'auth', function($id)
 {
 	return View::make('pages.dashboards.company_owner_dashboard');

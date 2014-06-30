@@ -388,6 +388,33 @@ Sigma.prototype = {
 
 	},
 
+	adminListeners: function() {
+		$(".form-login").submit(function(ev) {
+			ev = $.event.fix(ev);
+			ev.preventDefault();
+			$.ajax({
+				async: false,
+				url: "/admin/login/step1",
+				type : "POST",
+				dataType: "json",
+				data: {"name": $("#name").val(), "password": $("#password").val()},
+				success: function(data) {
+					console.log(data)
+					/*$("#main-content .wrapper").html("");
+					$("#main-content .wrapper").append($(data.html));
+					$.ajax({
+						url: "/company/owner/maps-update-live",
+						type : "GET",
+						dataType: "json",
+						success: function(data) {
+							sigma.GoogleMapsInit(data.latitude, data.longitude);
+						}
+					})*/
+				}
+			})
+		});
+	},
+
 	dashboardListeners : function() {
 		$(window).load(function(){
 	        $.ajax({
