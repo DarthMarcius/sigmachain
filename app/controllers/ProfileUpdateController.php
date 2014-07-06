@@ -50,7 +50,7 @@ class ProfileUpdateController extends BaseController {
 			);
 			$latitude = Input::get('latitude');
 			$longitude = Input::get('longitude');
-			$company_data = CompanyData::where('company_id', "=", Session::get('company_id'))->first();
+			$company_data = CompanyData::where('company_id', "=", Session::get('current_company_id'))->first();
 			$company_data->latitude = $latitude;
 			$company_data->longitude = $longitude;
 			$company_data->save();
@@ -76,10 +76,10 @@ class ProfileUpdateController extends BaseController {
 
 			$extension = File::extension($_FILES['photo']['name']);
 			$directory = base_path() .DIRECTORY_SEPARATOR. $_ENV['public_folder_name'] . DIRECTORY_SEPARATOR ."img".DIRECTORY_SEPARATOR."logos".DIRECTORY_SEPARATOR;
-			$filename = sha1(Auth::user()->id).".{$extension}";
+			$filename = sha1(Session::get('current_company_id')).".{$extension}";
 			$upload_success = Input::file('photo')->move($directory, $filename);
 
-			$company_data = CompanyData::where('company_id', "=", Session::get('company_id'));
+			$company_data = CompanyData::where('company_id', "=", Session::get('current_company_id'));
 			$company_data = $company_data->first();
 			$company_data->logo_url = $filename;
 			$company_data->save();
@@ -95,7 +95,7 @@ class ProfileUpdateController extends BaseController {
 		if(Request::ajax()){
 			$input = Input::all();
 			$res = "ok";
-			$company_data = Company::where('id', "=", Session::get('company_id'))->first();
+			$company_data = Company::where('id', "=", Session::get('current_company_id'))->first();
 			$company_data->name = $input["name"];
 			$company_data->country = $input["country"];
 			$company_data->description = $input["description"];
@@ -112,7 +112,7 @@ class ProfileUpdateController extends BaseController {
 		if(Request::ajax()){
 			$input = Input::all();
 			$res = "ok";
-			$company_data = CompanyData::where('company_id', "=", Session::get('company_id'))->first();
+			$company_data = CompanyData::where('company_id', "=", Session::get('current_company_id'))->first();
 			$company_data->address = $input["address"];
 			$company_data->phone = $input["phone"];
 			$company_data->skype = $input["skype"];
@@ -128,7 +128,7 @@ class ProfileUpdateController extends BaseController {
 		if(Request::ajax()){
 			$input = Input::all();
 			$res = "ok";
-			$company_data = Company::where('id', "=", Session::get('company_id'))->first();
+			$company_data = Company::where('id', "=", Session::get('current_company_id'))->first();
 
 			if(!Hash::check($input["oldPassword"], $company_data->password)) {
 				$res = "wrong old password";
@@ -152,7 +152,7 @@ class ProfileUpdateController extends BaseController {
 		if(Request::ajax()){
 			$input = Input::all();
 			$res = "ok";
-			$company_data = Company::where('id', "=", Session::get('company_id'))->first();
+			$company_data = Company::where('id', "=", Session::get('current_company_id'))->first();
 			$company_data->email = $input["email"];
 			$company_data->save();
 			$result = array (

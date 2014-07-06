@@ -44,6 +44,9 @@ class DashboardController extends BaseController {
 	// }
 	public function logout() {
 		if(Request::ajax()) {
+			Config::set('auth.model', 'Company');
+			Auth::logout();
+			Config::set('auth.model', 'Admin');
 			Auth::logout();
 			$result = array(
 				"result"=>"ok",
@@ -75,17 +78,19 @@ class DashboardController extends BaseController {
 			"company_id" => $session_company_id,
 
 			);
-		if($company_id == $session_company_id) {
+		if($company_id == $session_company_id || Session::get("admin_name") != null) {//if you are the owner of the page or admin
+			//var_dump(Session::all());
 			return View::make('pages.dashboards.company_owner_dashboard', $dataArray);
+			
 		}else {
 			return View::make('pages.dashboards.company_guest_dashboard', $dataArray);
 		}
 	}
 
 	public function getOwnerDashboard() {
-		$company_id = Session::get("company_id");
+		//$company_id = Session::get("company_id");
 		$session_company_id = Session::get("current_company_id");
-		$companyModel = Company::findOrFail($company_id);
+		$companyModel = Company::findOrFail($session_company_id);
 		$company = $companyModel->first();
 		$companyData = $companyModel->companyData();
 		$companyData = $companyData->first();
@@ -113,9 +118,9 @@ class DashboardController extends BaseController {
 	}
 
 	public function getOwnerProfile() {
-		$company_id = Session::get("company_id");
+		//$company_id = Session::get("company_id");
 		$session_company_id = Session::get("current_company_id");
-		$companyModel = Company::findOrFail($company_id);
+		$companyModel = Company::findOrFail($session_company_id);
 
 		$companyData = $companyModel->companyData();
 		$companyData = $companyData->first();
@@ -155,7 +160,7 @@ class DashboardController extends BaseController {
 
 	public function getLogoURL() {
 		if(Request::ajax()) {
-			$company_data = CompanyData::where('company_id', "=", Session::get('company_id'))->first();
+			$company_data = CompanyData::where('company_id', "=", Session::get('current_company_id'))->first();
 			$filename = $company_data->logo_url;
 			$result = array(
 				"url"=>"$filename",
@@ -166,7 +171,7 @@ class DashboardController extends BaseController {
 
 	public function getCompanyName() {
 		if(Request::ajax()) {
-			$company_data = Company::where('id', "=", Session::get('company_id'))->first();
+			$company_data = Company::where('id', "=", Session::get('current_company_id'))->first();
 			$name = $company_data->name;
 			$result = array(
 				"name"=>"$name",

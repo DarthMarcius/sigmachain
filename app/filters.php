@@ -35,17 +35,39 @@ App::after(function($request, $response)
 
 Route::filter('auth', function()
 {
-	if (Auth::guest()) return Redirect::guest('/');
+	Config::set('auth.model', 'Company');
+	Config::set('auth.table', 'companies');
+	if (Session::get("admin_name") == null) {//if you are not admin
+		if (Auth::guest()) return Redirect::guest('/');
+	}
 });
 
 Route::filter('auth_admin', function()
 {
-	if (Auth::guest()) return Redirect::guest('/admin/login');
-	if (Session::get("admin") !== true) {
+
+	Config::set('auth.model', 'Admin');
+	if (Auth::guest()) {
+		return Redirect::guest('/admin/login');
+	}
+	
+	if (Session::get("admin_name") == null) {
 		Auth::logout();
+		Config::set('auth.model', 'Company');
+		Auth::logout();
+		Session::flush();
+		//var_dump(Session::get("admin_name"));
 		return Redirect::guest('/admin/login');
 	}
 });
+
+Route::filter('auth_admin_login', function()
+{
+	Config::set('auth.model', 'Admin');
+	if (!Auth::guest()) {
+		return Redirect::guest('/admin');
+	}
+});
+
 
 
 Route::filter('auth.basic', function()

@@ -32,9 +32,10 @@
 	
 	
 	<script src="../bootstrap/assets/js/advanced-form-components.js"></script>    
+	
 	<script src="bootstrap/assets/js/jquery.scrollTo.min.js"></script>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
 	<script src="../bootstrap/assets/js/advanced-form-components.js"></script>
     <script src="../js/main.js"></script>
-	<script src="../js/dashboard.js"></script>
+	<script src="../js/admin.js"></script>
     

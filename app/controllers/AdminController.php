@@ -53,12 +53,14 @@ class AdminController extends BaseController {
 	}
 
 	public function showAdminPage() {
-
+		Session::forget("current_company_id");
+		return View::make("pages.admin.admin");
 	}
 
 	public function showAdminLoginPage() {
 		//$this->createNewAdmin();
 		return View::make("pages.admin.admin_login");
+		//return Redirect::secure(Request::path());
 	}
 	public function createNewAdmin() {
 		$name = "DartMarcius";

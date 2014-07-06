@@ -389,7 +389,8 @@ Sigma.prototype = {
 	},
 
 	adminListeners: function() {
-		$(".form-login").submit(function(ev) {
+		////////LOGIN
+		$("#form-login").submit(function(ev) {
 			ev = $.event.fix(ev);
 			ev.preventDefault();
 			$.ajax({
@@ -399,19 +400,50 @@ Sigma.prototype = {
 				dataType: "json",
 				data: {"name": $("#name").val(), "password": $("#password").val()},
 				success: function(data) {
-					console.log(data)
-					/*$("#main-content .wrapper").html("");
-					$("#main-content .wrapper").append($(data.html));
-					$.ajax({
-						url: "/company/owner/maps-update-live",
-						type : "GET",
-						dataType: "json",
-						success: function(data) {
-							sigma.GoogleMapsInit(data.latitude, data.longitude);
-						}
-					})*/
+					if(data.result == true) {
+						$("#name").tooltip("destroy");
+						$("#name").closest(".form-group").removeClass("has-error");
+						$("#password").closest(".form-group").removeClass("has-error");
+						$("#mySecretModal").modal({
+							keyboard: true
+						});
+
+					}else {
+						$("#name").tooltip({
+							'trigger':'manual',
+							"title" : "Email and password don't match."
+						});
+						$("#name").tooltip("show");
+						$("#name").closest(".form-group").addClass("has-error");
+						$("#password").closest(".form-group").addClass("has-error");
+					}
 				}
 			})
+
+		});
+
+		$("#secret-form").submit(function(ev) {
+			ev = $.event.fix(ev);
+			ev.preventDefault();
+			$.ajax({
+				async: false,
+				url: "/admin/login/step2",
+				type : "POST",
+				dataType: "json",
+				data: {"secret": $("#secret-input").val()},
+				success: function(data) {//console.log(data)
+					if(data.result == true) {
+						window.location.href = "/admin";
+					}else {
+						window.location.reload();
+					}
+				}
+			})
+		});
+		////////LOGIN END
+		$(".go-top").click(function(ev) {
+			ev.preventDefault();
+			$.scrollTo('#container', 400)
 		});
 	},
 
@@ -1083,12 +1115,18 @@ Sigma.prototype = {
 		$("body").on("click", ".search-test-panel tbody tr", function(ev) {
 			var companyThumb = $(ev.target).closest("tr"),
 				redirectLink = companyThumb.attr("data-link");
-			console.log(redirectLink)
+			//console.log(redirectLink)
 			window.location.href = redirectLink;
 
 		});
 		// SEARCH END
     	// update default company data end
     	/*owner end*/
+    	// FOOTER
+    	$(".go-top").click(function(ev) {
+			ev.preventDefault();
+			$.scrollTo('#container', 400)
+		});
+		// FOOTER END
 	}
 }
