@@ -9,6 +9,7 @@
 				 @include('admin_content.products')
 	        </section>
 	    </section>
+	    @include('admin_content.admin_popups')
 	    @include('footers.dashboard')
 	</section>
 	@include('js_footers.admin.admin')

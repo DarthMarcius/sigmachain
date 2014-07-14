@@ -8,6 +8,8 @@ $baseDir = dirname($vendorDir);
 return array(
     'AddBoolRegistrationStatus' => $baseDir . '/app/database/migrations/2014_05_18_101937_add_bool_registration_status.php',
     'AddConfirmKeyForCompanies' => $baseDir . '/app/database/migrations/2014_05_18_100942_add_confirm_key_for_companies.php',
+    'Admin' => $baseDir . '/app/models/Admin.php',
+    'AdminController' => $baseDir . '/app/controllers/AdminController.php',
     'BaseController' => $baseDir . '/app/controllers/BaseController.php',
     'Boris\\Boris' => $vendorDir . '/d11wtq/boris/lib/Boris/Boris.php',
     'Boris\\CLIOptionsHandler' => $vendorDir . '/d11wtq/boris/lib/Boris/CLIOptionsHandler.php',
@@ -34,6 +36,9 @@ return array(
     'CompanyData' => $baseDir . '/app/models/CompanyData.php',
     'CreateCompaniesTable' => $baseDir . '/app/database/migrations/2014_05_17_090217_create_companies_table.php',
     'CreateCompanyDataTable' => $baseDir . '/app/database/migrations/2014_06_09_170613_create_company_data_table.php',
+    'CreateProductItemsTable' => $baseDir . '/app/database/migrations/2014_07_12_160309_create_product_items_table.php',
+    'CreateProductTypes' => $baseDir . '/app/database/migrations/2014_07_12_155448_create_product_types.php',
+    'CreateProductsTable' => $baseDir . '/app/database/migrations/2014_07_12_155220_create_products_table.php',
     'Crypt_AES' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Crypt/AES.php',
     'Crypt_Base' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Crypt/Base.php',
     'Crypt_Blowfish' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Crypt/Blowfish.php',

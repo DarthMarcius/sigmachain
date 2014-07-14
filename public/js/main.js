@@ -441,9 +441,35 @@ Sigma.prototype = {
 			})
 		});
 		////////LOGIN END
+		// go to top of the page arrow
 		$(".go-top").click(function(ev) {
 			ev.preventDefault();
 			$.scrollTo('#container', 400)
+		});
+		// go to top of the page arrow end
+		$("#add-product").click(function() {
+			$("#new-product-modal").modal({
+				keyboard: true
+			});
+		});
+
+		$("#create-product-form").submit(function(ev) {
+			ev = $.event.fix(ev);
+			$.ajax({
+				async: false,
+				url: "/admin/add-product",
+				type : "POST",
+				dataType: "json",
+				data: {
+					"name": $("#product-name").val(),
+					"timeStandard": $("#product-time-standart").val(),
+					"paymentStandard": $("#product-payment-standard").val()
+				},
+				success: function(data) {console.log(data)
+					
+				}
+			})
+
 		});
 	},
 

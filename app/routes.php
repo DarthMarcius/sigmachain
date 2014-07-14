@@ -50,10 +50,11 @@ Route::get("/admin", array('before' => 'auth_admin', 'uses' => 'AdminController@
 Route::get("/admin/login", array('before' => 'auth_admin_login', 'uses' => 'AdminController@showAdminLoginPage'));
 
 // admin page ajax
+//admin page login
 Route::post("/admin/login/step1", "LoginController@adminLoginStep1");
 Route::post("/admin/login/step2", "LoginController@adminLoginStep2");
-
-
+//admin page login end
+Route::post("/admin/add-product", "AdminController@addProduct");
 // admin page ajax end
 // admin page end
 /*Route::get("/company/{id}", array('before' => 'auth', function($id)

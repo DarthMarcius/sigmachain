@@ -8,7 +8,7 @@
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
     <link rel="shortcut icon" href="http://alvarez.is/demo/dashio/favicon.png">
 
-    <title>Dashboard</title>
+    <title>Admin</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../bootstrap/assets/css/bootstrap.css" rel="stylesheet">

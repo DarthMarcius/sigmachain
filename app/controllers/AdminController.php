@@ -63,15 +63,27 @@ class AdminController extends BaseController {
 		//return Redirect::secure(Request::path());
 	}
 	public function createNewAdmin() {
-		$name = "DartMarcius";
+		$name = "Marcius";
 		$password = "111111";
 		$passwordHash = Hash::make($password);
-		$email = "marksidius@gmail.com";
+		$email = "asmodianis@gmail.com";
 		$newAdmin = new Admin;
 		$newAdmin->name = $name;
 		$newAdmin->email = $email;
 		$newAdmin->password = $passwordHash;
 		$newAdmin->save();
+	}
+	public function addProduct() {
+		$productData = Input::all();
+		$newProduct = new Product;
+		$newProduct->name = $productData["name"];
+		$newProduct->manufacture_time_standard = $productData["timeStandard"];
+		$newProduct->payment_standard = $productData["paymentStandard"];
+		$newProduct->save();
+		$result = array(
+				"result"=>"ok",
+			);
+		return Response::json($result);
 	}
 	/*public function getCompanyName() {
 		if(Request::ajax()) {
